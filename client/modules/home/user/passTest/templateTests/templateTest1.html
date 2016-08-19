@@ -1,0 +1,19 @@
+<div class="contaoner-fluid">
+	<div class="row">
+		<div class="main-que col-xs-12 col-offset-sm-2 col-sm-10">
+			<form>
+				<label class="label-text-que">
+					{{$index + 1}}. {{question.question}}
+				</label>
+				<div ng-repeat="ans in question.options track by $index" class="div-ans">
+					<input type="radio" name="ans" ng-model="omg.tempChoise" ng-value="$index" ng-change="changeValidRT(currentPage)" id="{{$parent.$index}}-{{$index}}"> 
+					<label for="{{$parent.$index}}-{{$index}}" class="main-label">
+						<div class="icon radio-icon">
+						</div>
+						{{ans}}
+					</label>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

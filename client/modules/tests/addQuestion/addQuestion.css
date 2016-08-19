@@ -1,0 +1,84 @@
+.form-file {
+	margin: 20px 0 20px 10px;
+}
+
+.icon-block {
+	width: initial !important;
+}
+
+.input-option {
+	display: inline-block;
+}
+
+.btn-submit-que {
+	display: block;
+	margin-top: 20px;
+}
+
+
+.add-question .container-fluid {
+	width: inherit;
+}
+
+.add-question .row-fluid {
+	width: inherit;
+}
+
+.add-question .ads{
+	margin: 10px 0 10px 10px;
+    font-size: 1.5em;
+    font-family: 'Pavanam', sans-serif;
+	display: block;
+}
+
+.add-question .options {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.add-question textarea {
+	margin-bottom: 10px;
+	padding: 10px;
+	resize: none;
+	width: 80%;
+	height: 200px;
+	border-color: rgb(204,204,204);
+}
+
+.add-question .sm-textarea {
+	height: 100px;
+}
+
+.add-question .btn-success {
+	display: block;
+	margin-top: 10px;
+	float: right;
+}
+
+
+.plus-option {
+	background-image: url(../../../assets/images/icons/plus.png);
+	margin-right: 0 !important; 
+}
+
+.remove-option {
+	background-image: url(../../../assets/images/icons/remove.png);
+	margin-right: 0 !important; 
+
+}
+
+input[type="file"] {
+	display: none;
+}
+
+@media screen and (max-width: 450px) {
+	.add-question textarea {
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.add-question textarea {
+		width: 200px;
+	}
+}

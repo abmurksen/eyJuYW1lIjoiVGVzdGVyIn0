@@ -1,0 +1,108 @@
+<header ng-controller="headerController">
+    <div class="header-block navbar">
+        <!--Logo-->
+        <div class="col-sm-2 col-xs-6">
+            <a ui-sref="home">
+
+            <!-- изменить логотип -->
+                <span>система тестирования</span>
+            </a>
+        </div>
+
+        <!--Full navigation menu-->
+        <div class="header-nav-lg col-sm-10">
+            <ul>
+                <li uib-dropdown ng-repeat="menuItem in headerMenu">
+                    <a ng-if="menuItem.state" ui-sref="{{menuItem.state}}" ng-click="timeToChangeA()"
+                    ng-class="{'choose-menu-admin': forChoise[$index] && role === 'admin', 
+                                'choose-menu-user': forChoise[$index] && role === 'user',
+                                'choose-menu-guest': forChoise[$index] && role === 'guest',
+                                'choose-menu-teacher': forChoise[$index] && role === 'teacher' }">
+                        {{menuItem.name}}
+                    </a>
+                    <a ng-if="!menuItem.state" href="" uib-dropdown-toggle 
+                    ng-class="{'choose-menu-admin': forChoise[$index] && role === 'admin', 
+                                'choose-menu-user': forChoise[$index] && role === 'user',
+                                'choose-menu-guest': forChoise[$index] && role === 'guest',
+                                'choose-menu-teacher': forChoise[$index] && role === 'teacher' }">
+                        {{menuItem.name}}
+                    </a>
+                    <ul ng-if="!menuItem.state" uib-dropdown-menu class="dropdown-menu dropdown-menu-right">
+                        <li ng-repeat="subMenuItem in menuItem.tabs">
+                            <a ui-sref="{{subMenuItem.state}}" ng-click="timeToChangeA()">{{subMenuItem.name}}</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li uib-dropdown>
+                    <a href="" uib-dropdown-toggle 
+                    ng-class="{'choose-menu-admin': forChoise[menuLength - 1] && role === 'admin', 
+                                'choose-menu-user': forChoise[menuLength - 1] && role === 'user',
+                                'choose-menu-guest': forChoise[menuLength - 1] && role === 'guest',
+                                'choose-menu-teacher': forChoise[menuLength -1] && role === 'teacher' }">
+                        Профиль
+                    </a>
+                    <ul uib-dropdown-menu class="dropdown-menu dropdown-menu-right">
+                        <li ng-if="role !== 'guest'">
+                            <a ui-sref="editProfile" ng-click="timeToChangeA()">{{personalName}}</a>
+                        </li>
+                        <li>
+                            <a ui-sref="checkMicrophone" ng-click="timeToChangeA()">Проверка записи аудио</a>
+                        </li>
+                        <li>
+                            <a href="" ng-click="logout()">Выход</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!--Small navigation menu-->
+        <div class="header-nav-sm col-xs-6" ng-if="isShowSmallNav">
+            <uib-accordion>
+                <div uib-accordion-group class="main-nav-sm">
+                    <uib-accordion-heading>
+                        <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    </uib-accordion-heading>
+                    <uib-accordion>
+                        <div class="menu-panel-sm" ng-repeat="menuItem in headerMenu" uib-accordion-group
+                             is-disabled="menuItem.state" ng-click="selectMenu(menuItem)">
+                            <uib-accordion-heading>
+                                {{menuItem.name}}
+                            </uib-accordion-heading>
+                            <ul class="submenu-panel-sm">
+                                <li ng-repeat="tab in menuItem.tabs" class="submenu-sm">
+                                    <div>
+                                        <a href="" ng-click="selectMenu(tab)">{{tab.name}}</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-panel-sm" uib-accordion-group>
+                            <uib-accordion-heading>
+                                Профиль
+                            </uib-accordion-heading>
+                            <ul class="submenu-panel-sm">
+                                <li class="submenu-sm">
+                                    <div>
+                                        <a ui-sref="editProfile">Редактировать профиль</a>
+                                    </div>
+                                </li>
+                                <li class="submenu-sm">
+                                    <div>
+                                        <a href="">Проверить микрофон</a>
+                                    </div>
+                                </li>
+                                <li class="submenu-sm">
+                                    <div>
+                                        <a href="" ng-click="logout()">Выход</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </uib-accordion>
+                </div>
+            </uib-accordion>
+        </div>
+    </div>
+</header>

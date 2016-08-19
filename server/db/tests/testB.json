@@ -1,0 +1,227 @@
+{
+    "tests" : 
+    [
+            {
+                
+                "question" : "Your dream house",
+                "level" : 1,
+                "type" : "essay"
+            }
+
+            ,{
+                
+                "question" : "Your memory of a place that you visited as a child",
+                "level" : 1,
+                "type" : "essay"
+            }
+
+            ,{
+                
+                "question" : "Teachers and administrators in many American schools are now authorized to conduct random inspections of students' lockers and backpacks. Explain why you support or oppose this practice.",
+                "level" : 5,
+                "type" : "essay"
+            }
+
+            ,{
+                
+                "question" : "Online learning is not only convenient for students and teachers but often more effective than traditional classroom instruction. Addressing an audience of your peers, explain why you agree or disagree with this observation.",
+                "level" : 5,
+                "type" : "essay"
+            }
+
+            ,{
+                
+                "question" : "To save fuel and money, Friday classes should be eliminated on campus and a four-day work week implemented for all employees. With reference to the effects of reduced schedules at other schools or colleges, explain why you support or oppose this plan.",
+                "level" : 5,
+                "type" : "essay"
+            }
+
+            ,{
+                
+                "question" : "In a speech or essay addressed to the head of your school or college, explain why snack and soda vending machines should or should not be removed from all classroom buildings on your campus.",
+                "level" : 5,
+                "type" : "essay"
+            }
+
+            ,{
+                
+                "question" : "Your state legislature is now considering a proposal to allow drinking by 18- to 20-year-olds after they have completed an alcohol education program. Explain why you support or oppose this proposal.",
+                "level" : 5,
+                "type" : "essay"
+            }
+
+            ,{
+                
+                "question" : "In your school or college, instructors have the right to ban cell phones (or mobiles) in their classrooms. Explain why you favor or oppose such a ban.",
+                "level" : 5,
+                "type" : "essay"
+            }
+
+            ,{
+                
+                "question" : "Your first day at a new job",
+                "level" : 2,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "Your last day on a job",
+                "level" : 2,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "A strange job interview",
+                "level" : 2,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "An encounter that changed your life",
+                "level" : 2,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "People have become overly dependent on technology.",
+                "level" : 3,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "Censorship is sometimes justified.",
+                "level" : 3,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "The lost art of letter-writing deserves to be revived.",
+                "level" : 3,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "Most study-abroad programs should be renamed \"party abroad\": they are a waste of time and money",
+                "level" : 3,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "The solution to the impending crisis in Social Security is the immediate elimination of this government program.",
+                "level" : 3,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "Both parents should assume equal responsibility in raising a child",
+                "level" : 4,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "The production and sale of cigarettes should be made illegal",
+                "level" : 4,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "All citizens should be required by law to vote",
+                "level" : 4,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "Freshmen should not be required to purchase a meal plan from the college.",
+                "level" : 4,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "Any citizen who does not have a criminal record should be permitted to carry a concealed weapon.",
+                "level" : 4,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "A student organization should be formed to rescue and care for the feral cats on campus.",
+                "level" : 3,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "a street that leads to your home or school",
+                "level" : 1,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "backstage during a play or a concert",
+                "level" : 1,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "a Halloween costume",
+                "level" : 1,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "a photograph",
+                "level" : 1,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "an ideal apartment",
+                "level" : 2,
+                "type" : "essay"
+            }
+
+            ,
+            {
+                
+                "question" : "Your family",
+                "level" : 2,
+                "type" : "essay"
+            }
+    ]
+}

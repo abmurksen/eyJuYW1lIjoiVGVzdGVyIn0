@@ -1,0 +1,4 @@
+<div ng-if="isAdmin()" ng-include="'modules/home/admin/admin-home.html'"></div>
+<div ng-if="isUser()" ng-include="'modules/home/user/user-home.html'"></div>
+<div ng-if="isTeacher()" ng-include="'modules/home/teacher/teacher-home.html'"></div>
+<div ng-if="isGuest()" ng-include="'modules/home/guest/guest-home.html'"></div>

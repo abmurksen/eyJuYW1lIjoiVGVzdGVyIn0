@@ -1,0 +1,47 @@
+html, body {
+    height: 100%;
+}
+
+div:hover {
+	cursor: default;
+}
+
+.container {
+    min-height: 100%;
+    width: 100%;
+    margin-bottom: -50px;
+}
+
+    .container:after {
+        content: "";
+        display: block;
+        height: 50px;
+    }
+
+.main {
+    width: 100%;
+    position: relative;
+    padding: 35px 25px 0px 25px;
+    margin-top: 70px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+footer {
+    height: 50px;
+    box-shadow: 3px 0 0 rgba(0,0,0,.12),0 0 7px rgba(0,0,0,.24);
+}
+
+    footer > h3 {
+        margin: 0;
+        margin-right: 30px;
+        padding: 10px;
+        text-align: right;
+        color: darkgrey;
+    }
+
+@media (max-width: 767px) {
+	.main {
+		padding: 30px 20px 20px 20px;
+	}
+
+}

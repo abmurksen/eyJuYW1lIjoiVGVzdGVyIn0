@@ -1,0 +1,34 @@
+.newsTab {
+    padding: 20px;
+}
+
+.news > p {
+    padding: 20px;
+    width: 65%;
+    font-size: medium;
+    position: relative;
+}
+
+.news img {
+    height: 128px;
+    width: 128px;
+    margin: auto;
+    display: block;
+}
+
+.card-admin-home .btn-news {
+    display: none;
+}
+
+.card-admin-home:hover .btn-news {
+    display: block;
+    float: right;
+    margin-top: 15px;
+}
+
+@media (max-device-width: 767px) {
+    .card-admin-home .btn-news {
+        display: block;
+        float: right;
+    }
+}

@@ -1,0 +1,19 @@
+.card-teacher {
+	padding: 20px;
+}
+
+.date-color-teacher{
+	font-size: 1.7em;
+    color: rgb(232, 134, 18);
+}
+
+.level-info {
+	font-size: 1.5em;
+    font-family: 'Pavanam', sans-serif;
+    margin: 5px 0 0 10px;
+}
+
+.btn-left {
+	display: block;
+    margin-left: auto;
+}

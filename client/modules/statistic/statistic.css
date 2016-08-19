@@ -1,0 +1,62 @@
+.listOfSearch {
+    list-style-type: none;
+    padding: 10px;
+    width: 100%;
+    height: 26em;
+    line-height: 2em;
+    margin-top: 3%;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: white;
+}
+
+    .listOfSearch p {
+        color: grey;
+        margin-top: -10px;
+    }
+
+    .listOfSearch li {
+        border-bottom: 1px solid rgba(51, 51, 51, 0.34);
+    }
+
+.showUserInfo {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+    .showUserInfo .wrapperShedule {
+        margin-top: 20px;
+    }
+
+    .showUserInfo input {
+        display: block;
+        height: 45px;
+        padding: 5px;
+        margin-top: 3%;
+        width: 100%;
+    }
+
+    .showUserInfo h1,
+    .showUserInfo h3 {
+        width: 100%;
+        color: grey;
+    }
+
+.statistics input {
+    width: 80%;
+    display: inline-block;
+}
+
+.img-stat {
+    width: 64px;
+}
+
+@media (max-width: 767px) {
+    .img-stat {
+        margin: auto;
+        display: block;
+    }
+    .statistics input {
+        width: 100%;
+    }
+}

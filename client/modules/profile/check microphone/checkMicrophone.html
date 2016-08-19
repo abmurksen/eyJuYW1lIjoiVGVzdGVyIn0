@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="all-check col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-2 col-md-4 col-lg-offset-2 col-lg-4">
+		<div class="card audio-card">
+			<label class="check-label">Проверить микрофон</label>
+			<ng-audio-recorder id='audioInput' audio-model='recordedInput'>
+			  	<div ng-if="recorder.isAvailable" class="sound-block">
+				    <button ng-click="recorder.startRecord()" type="button" ng-disabled="recorder.status.isRecording" class="btn-admin btn-music btn-music-start-record"></button>
+				    <button ng-click="recorder.stopRecord()" type="button" ng-disabled="recorder.status.isRecording === false" class="btn-admin btn-music btn-music-stop"></button>
+				    <button ng-click="recorder.playbackResume()" type="button" ng-disabled="recorder.status.isRecording || !recorder.audioModel" class="btn-admin btn-music btn-music-play"></button>
+				    <button ng-click="recorder.playbackPause()" type="button" ng-disabled="recorder.status.isRecording || !recorder.audioModel" class="btn-admin btn-music btn-music-pause"></button>
+				</div>
+
+				  <div ng-if="!recorder.isAvailable">
+				    Message for users when recording is not possible.
+				  </div>
+			</ng-audio-recorder>
+		</div>
+		</div>
+		<div class="all-check col-xs-12 col-sm-5 col-md-4 col-lg-4">
+		<div class="card audio-card">
+			<label class="check-label">Check loudspeakers/headphones</label>
+			<div class="sound-block">
+			<sound-manager>
+				<button music-player="play" add-song="forSong" class="btn-admin btn-music btn-music-play" ng-click="startPlay()" ng-if="!isPlayingMy"></button>
+				<button play-music class="btn-admin btn-music btn-music-play" ng-if="isPlayingMy" ></button>					
+				<button pause-music class="btn-admin btn-music btn-music-pause"></button>
+				<button stop-music class="btn-admin btn-music btn-music-stop"></button>
+				<div class="seekBase seekBase-admin" seek-track ng-if="isPlayingMy">
+       				<div class="seekLoad seekLoad-admin" ng-style="{width : ( progress + '%' ) }"></div>
+       			</div>
+			</sound-manager>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>

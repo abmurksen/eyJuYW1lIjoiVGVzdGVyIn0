@@ -1,0 +1,14 @@
+<div class="login-wrapper">
+	<video autoplay loop muted class="bgvideo" id="bgvideo">
+   		<source src="assets/videos/background.mp4" type="video/mp4"></source>
+  	</video>
+    <div class="login-container">
+        <!--<h1><img src="assets/images/exadel_logo2.png"  alt="Exadel" class="logo"/></h1>-->
+        <p ng-show="isNonValidCreds" class="warning-text">Ошибка при вводе данных! Попробйте ещё раз.</p>
+        <form ng-submit="login()">
+            <input type="email" ng-model="user.name" placeholder="Username" class="input-admin">
+            <input type="password" ng-model="user.password" placeholder="Password" class="input-admin">
+            <button class="btn-login btn-admin" ng-click="login()" type="submit">Войти</button>
+        </form>
+    </div>
+</div>

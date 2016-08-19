@@ -1,0 +1,16 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="main-que col-xs-12 col-offset-sm-2 col-sm-10">
+			<form name="main" novalidate>
+				<label class="label-text-que">
+					{{$index + 1}}/{{totalCount}} {{question.question}}
+				</label>
+				<div class="div-check-answer">
+					{{question.answer}}
+				</div>
+				<input type="text" focus="true" class="input-teacher" name="mark" ng-model="omg.tempMark" ng-change='onlineWriteValid(currentPage)' ng-pattern="'[0-9]{1,3}'" placeholder="Mark: 0 - 100" required>
+				<span ng-show="main.mark.$dirty && !validMark(100)" class="error-mes">Wrong mark</span>
+			</form>
+		</div>
+	</div>
+</div>

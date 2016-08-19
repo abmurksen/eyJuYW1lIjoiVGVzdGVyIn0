@@ -1,0 +1,38 @@
+.formWrapper {
+    padding: 0;
+    position: relative;
+}
+
+.sel1 > *, .sel2 > * {
+    margin-top: 15px;
+}
+
+.sel1 > div > input, .sel2 > div > input, .disable {
+    display: block;
+    height: 45px;
+    width: 100%;
+    background-color: white;
+    border-color: #66afe9 !important;
+}
+
+.sel1 > ol, .sel2  > ol {
+    width: 100% !important;
+}
+
+.formSelect {
+    display: inline-block;
+}
+
+/*.col-centered {*/
+    /*float: none;*/
+    /*margin: 0 auto;*/
+/*}*/
+
+.btn-block {
+    text-align: center;
+}
+
+.comment {
+    color: gray;
+    padding: 10px;
+}

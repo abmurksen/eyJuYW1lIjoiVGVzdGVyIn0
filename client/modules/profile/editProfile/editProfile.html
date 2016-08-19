@@ -1,0 +1,62 @@
+<div class="profile col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <form class="info col-xs-10 col-sm-10 col-md-7 col-lg-7" name="user" novalidate>
+        <h1 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{userProfile.name}}</h1>
+        <div class="row">
+            <div class="row">
+                <input type="text" size="40" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 disable myCl" ng-model="mail" ng-value="userProfile.email" disabled>
+            </div>
+            <div class="row">
+                <span ng-show="user.phnum.$error.pattern" class="error-mes" ng-pattern="'[+]{1}[375]{1}[0-9]{11,11}'" name="errValidation" ng-model="disButton">Введите корректный номер</span>
+                <input type="text" name="phnum" size="40" class="input-with-img col-xs-10 col-sm-10 col-md-10 col-lg-10 disable" ng-model="telNbr" ng-disabled="disable2 == true"
+                       ng-change="changeTelNumber()" ng-value="userProfile.telNumber" ng-pattern="'[+]{1}[375]{1}[0-9]{11,11}'" required>
+                <a class="col-xs-1 col-sm-1 col-md-1 col-lg-1" ng-click="onScndInput()" data-toggle="tooltip" title="Edit number">
+                    <img src="assets/images/icons/editProfile.png">
+                </a>
+            </div>
+            <input type="text" size="40" class="col-xs-11 col-sm-11 col-md-11 col-lg-11 disable" ng-model="totalTests" ng-value="'Count of assign tests: ' + userProfile.totalTests" 
+                ng-if="role == 'teacher' " disabled>
+            <input type="text" size="40" class="col-xs-11 col-sm-11 col-md-11 col-lg-11 disable" ng-model="assignTests" ng-value="'Count of total tests: ' + userProfile.assignTests" 
+                ng-if="role == 'teacher' " disabled>
+        </div>
+        <button class="btn-admin submit" type="submit" ng-disabled="disable2 == true || user.phnum.$error.pattern" ng-click="save()">Сохранить</button>
+    </form>
+
+    <div class="wrapperShedule card" ng-if="role == 'user' || role == 'guest'">
+        <div ng-if="myData.length">
+            <div>
+                <div class="namesOfShedule">
+                    <ul>
+                        <li class="col-xs-2 col-sm-2 col-md-2 col-lg-2" ng-repeat="level in levels"><span>{{level.name}}</span></li>
+                    </ul>
+                </div>
+                <br>
+
+                <div>
+                    <hr>
+                </div>
+
+                <div>
+                    <!--<div><span>25.07.2016</span></div>-->
+                    <!--<div><span>25.07.2016</span></div>-->
+                    <!--<div><span>25.07.2016</span></div>-->
+                    <!--<div><span>25.07.2016</span></div>-->
+                    <!--<div><span>25.07.2016</span></div>-->
+                    <!--<div><span>25.07.2016</span></div>-->
+                </div>
+
+                <div class="graphicWrapper">
+                    <div class="row">
+                        <bars-chart chart-data="myData" class="col-xs-10 col-sm-10 col col-md-10 col-lg-10"></bars-chart>
+                        <span class="col-xs-2 col-sm-2 col-md-2 col-lg-2" ng-repeat="item in testData track by $index">{{item}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="!myData.length">
+            <h3>У вас ещёнет пройденных тестов.</h3>
+        </div>
+
+
+    </div>
+
+</div>

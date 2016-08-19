@@ -1,0 +1,428 @@
+{
+  "tests":  [{
+            "question" : "____ Caviar in the fridge.",
+            "level" : 1,
+            "answers" : [ 
+                2
+            ],
+            "options" : [ 
+                "There isn't no", 
+                "There is any", 
+                "There isn't any", 
+                "There aren't no"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "He goes to his guitar lessons ____",
+            "level" : 1,
+            "answers" : [ 
+                0
+            ],
+            "options" : [ 
+                "by underground", 
+                "on underground", 
+                "with underground", 
+                "in underground"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "Choose correct question",
+            "level" : 1,
+            "answers" : [ 
+                2
+            ],
+            "options" : [ 
+                "Where playing Real Madrid?", 
+                "Where is playing Real Madrid?", 
+                "Where is Real Madrid playing?", 
+                "Where playing is Real Madrid?"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "She ______ Supper with us last Friday",
+            "level" : 1,
+            "answers" : [ 
+                3
+            ],
+            "options" : [ 
+                "hadn't", 
+                "no had", 
+                "didn't have got", 
+                "didn't have"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "There is ______ of beer left from the party",
+            "level" : 1,
+            "answers" : [ 
+                0
+            ],
+            "options" : [ 
+                "a lot", 
+                "much", 
+                "little", 
+                "too"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "Michael ______ Paris in the morning",
+            "level" : 1,
+            "answers" : [ 
+                2
+            ],
+            "options" : [ 
+                "to leaving", 
+                "leaves for", 
+                "is leaving for", 
+                "leave to"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "Suddenly, we heard a loud noise, but outside, there ____ there!",
+            "level" : 2,
+            "answers" : [ 
+                0
+            ],
+            "options" : [ 
+                "was nobody", 
+                "is anybody", 
+                "wasn't nobody", 
+                "was somebody"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "He _____ breakfast yesterday",
+            "level" : 2,
+            "answers" : [ 
+                3
+            ],
+            "options" : [ 
+                "hadn't", 
+                "no had", 
+                "didn't have got", 
+                "didn't have"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "Choose correct sentence",
+            "level" : 2,
+            "answers" : [ 
+                0
+            ],
+            "options" : [ 
+                "Mary usually drives carefully", 
+                "Mary carefully drives usually", 
+                "Mary carefully usually drives", 
+                "Mary usually carefully drives"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "Don't start _____ That's for babies!",
+            "level" : 2,
+            "answers" : [ 
+                1
+            ],
+            "options" : [ 
+                "to crying!", 
+                "crying!", 
+                "in crying!"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "Have you finished the shopping _____ ?",
+            "level" : 2,
+            "answers" : [ 
+                0
+            ],
+            "options" : [ 
+                "yet", 
+                "now", 
+                "already"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "- _____ have you been waiting?  -Only a few minutes",
+            "level" : 3,
+            "answers" : [ 
+                0
+            ],
+            "options" : [ 
+                "How long", 
+                "How long time", 
+                "For how long"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "I wouldn't mind _____ the baby tonight.",
+            "level" : 3,
+            "answers" : [ 
+                2
+            ],
+            "options" : [ 
+                "to look after", 
+                "look after", 
+                "looking after", 
+                "to looking after"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "Thanks for remembering my birthday, but you _____ bought me a present.",
+            "level" : 3,
+            "answers" : [ 
+                2
+            ],
+            "options" : [ 
+                "haven't", 
+                "mustn't", 
+                "shouldn't have", 
+                "have had to"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "The woman _____ by the table is his sister, not his mother.",
+            "level" : 3,
+            "answers" : [ 
+                3
+            ],
+            "options" : [ 
+                "whose", 
+                "is standing", 
+                "stands", 
+                "standing"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "You guys _____ better get a move on if you don't want to miss the film.",
+            "level" : 3,
+            "answers" : [ 
+                3
+            ],
+            "options" : [ 
+                "ought", 
+                "have", 
+                "would", 
+                "had"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "It would be lovely to go to Japan, but _____ thinking we can",
+            "level" : 4,
+            "answers" : [ 
+                2
+            ],
+            "options" : [ 
+                "There is no use", 
+                "It is no point", 
+                "It is no use", 
+                "It is usefulness"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "Not mentioning anyone _____ , but who left the door open all night?",
+            "level" : 4,
+            "answers" : [ 
+                3
+            ],
+            "options" : [ 
+                "especially", 
+                "specially", 
+                "himself", 
+                "in particular"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "_____ waiting any longer. They are clearly not coming.",
+            "level" : 4,
+            "answers" : [ 
+                0
+            ],
+            "options" : [ 
+                "There is no use", 
+                "It is no point", 
+                "It is no use", 
+                "It is usefulness"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "- We'll never be able to do it. - said the man to nobody _____",
+            "level" : 4,
+            "answers" : [ 
+                1
+            ],
+            "options" : [ 
+                "especially", 
+                "in particular", 
+                "specially", 
+                "himself"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "All my life _____",
+            "level" : 5,
+            "answers" : [ 
+                2
+            ],
+            "options" : [ 
+                "I loved going to the movies", 
+                "I have loved to go to the movies", 
+                "I've loved going to the movies"
+            ],
+            "complaint" : false,
+            "type" : "manyOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "He's had his car _____",
+            "level" : 5,
+            "answers" : [ 
+                1
+            ],
+            "options" : [ 
+                "when he passed his driving test", 
+                "since he passed his driving test", 
+                "as he passed his driving test"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "Choose the correct option",
+            "level" : 5,
+            "answers" : [ 
+                2
+            ],
+            "options" : [ 
+                "The painting sold for three thousand euros", 
+                "The painting was being sold for three thousand euros", 
+                "The painting was sold for three thousand euros"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }
+
+        , 
+        {
+            
+            "question" : "Choose the correct option",
+            "level" : 5,
+            "answers" : [ 
+                0
+            ],
+            "options" : [ 
+                "I can't imagine why he said that", 
+                "I might imagine why he said that", 
+                "I don't imagine why he said that"
+            ],
+            "complaint" : false,
+            "type" : "oneOfMany"
+        }]
+}
+        
+
+    
+ 

@@ -1,0 +1,29 @@
+.start-test, .req-test {
+    margin-top: 90px;
+    height: 100px;
+    width: 170px;
+    font-size: 25px;
+    color: #f4eade;
+}
+
+.start-test {
+	background-color: #2988bc;
+}
+
+.req-test {
+	background-color: #ed8c72;
+}
+
+.col-xs-12 {
+	text-align: center;
+	height: 200px;
+}
+
+.info-about-start-test {
+	margin-top: 10px;
+}
+
+.info-about-req-test {
+	margin-top: 10px;
+}
+

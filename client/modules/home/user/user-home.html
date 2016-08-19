@@ -1,0 +1,54 @@
+<div class="container" ng-controller="userHomeController">
+    <div class="row">
+        <div class="welcome-all col-xs-12 col-sm-12 col-md-offset-1 col-md-11 col-lg-offset-1 col-lg-11">
+            <div class="welcome-name">
+                Hello, {{firstName}} {{lastName}}
+            </div>
+            <div class="welcome">
+                Welcome to English Tester
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card card-user-home col-xs-12 col-sm-12 col-md-10 col-lg-offset-1 col-lg-8">
+            <div class="start col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                <button class="btn-user btn-start-smile" ng-click="onStartTest()" ui-sref="passTest" ng-disabled="!openNow"></button>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+                <div ng-if="!disStart" class="info-about-button">
+                    Great! You can start to pass the test.<br> From: <span class="date-color-user">{{dateStart}}</span><br>To: <span class="date-color-user">{{dateEnd}}<br></span>
+                    You have 2 hours for this.
+                </div>
+                <div ng-if="disStart" class="info-about-button">
+                	Sorry! You can't start to pass the test now, because you have not assigned yet
+                </div>
+            </div>
+            <div class="row" ng-if="openNow">
+                <div class="col-xs-offset-10 col-xs-2 col-sm-offset-11 col-sm-1">
+                    <button class="btn-user btn-start" ng-click="onStartTest()" ui-sref="passTest">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card card-user-home col-xs-12 col-sm-12 col-md-10 col-lg-offset-1 col-lg-8">
+            <div class="start col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                <button class="btn-user btn-req-smile" ng-click="onSendRequest()" ng-disabled="disReq"></button>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+                <div ng-if="!disReq" class="info-about-button">
+                    You can to send request for passing the test. <br>Notification of the designated test will come on email later.
+                </div>
+                <div ng-if="disReq" class="info-about-button">
+                    You can't to send request for passing the test, because you sent it before or you have open test.
+                </div>
+            </div>
+            <div class="row" ng-if="!disReq">
+                <div class="col-xs-offset-10 col-xs-2 col-sm-offset-11 col-sm-1">
+                    <button class="btn-user btn-start" ng-click="onSendRequest()">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

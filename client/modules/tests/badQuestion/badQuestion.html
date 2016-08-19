@@ -1,0 +1,41 @@
+<div class="container">
+	<div ng-if="totalCount === 0" class="div-empty">
+		There are no promlems with questions
+	</div>
+	<div class="row" ng-if="totalCount > 0">
+		<div class="div-test col-xs-12 col-sm-8 col-md-offset-1 col-md-6 col-lg-offset-1 col-lg-6">
+
+			<button ng-click="setNumPage(currentPage - 1)" ng-disabled="currentPage === 1" class="btn-admin btn-prev">Prev</button>
+			<uib-pagination class="pagination-sm admin-pagi" items-per-page="1" ng-model="currentPage" total-items="totalCount" max-size="4" boundary-link-numbers="true" direction-links="false" ng-change="pageChanged(copyCurrentPage, currentPage)" > 
+			</uib-pagination>
+			<button ng-click="setNumPage(currentPage + 1)" ng-disabled="currentPage === totalCount" class="btn-admin btn-next">Next</button>
+			
+			<div ng-repeat="question in allQuestions track by $index">
+				<div ng-if="$index === $parent.currentPage - 1" ng-include="urls[question.type]">
+				</div>
+			</div>	
+		</div>
+		<div class="div-main-fing col-xs-12 col-sm-4 col-md-4 col-lg-4">
+			<div class="div-help" ng-class="{'div-choosen':adminSay[currentPage - 1].normal === true}">
+			<div class="div-fing">
+				<button class="btn-admin btn-icon btn-fing btn-good-que" id="btn-good-que" ng-click="thinkGood(currentPage)"></button>
+				<label class="label-fing label-admin-fing" for="btn-good-que" >Rigth question</label>
+			</div>
+			</div>
+			<div class="div-help" ng-class="{'div-choosen':adminSay[currentPage - 1].normal === ''}">
+			<div class="div-fing">
+				<button class="btn-admin btn-icon btn-fing btn-hz-que" id="btn-hz-que" ng-click="thinkStill(currentPage)"></button>
+				<label class="label-fing label-admin-fing" for="btn-hz-que">Undo choice</label>
+			</div>
+			</div>	
+			<div class="div-help" ng-class="{'div-choosen':adminSay[currentPage - 1].normal === false}">
+			<div class="div-fing">
+				<button class="btn-admin btn-icon btn-fing bnt-bad-que" id="btn-bad-que" ng-click="thinkBad(currentPage)"></button>
+				<label class="label-fing label-admin-fing" for="btn-bad-que">Wrong question</label>
+			</div>	
+			</div>
+			
+			<button class="btn-admin btn-submit" ng-click="sendQuestions()">Submit</button>
+		</div>
+	</div>
+</div>

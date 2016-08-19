@@ -1,0 +1,51 @@
+{
+  "name": "et4",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExadelG4/EnglishTester.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ExadelG4/EnglishTester/issues"
+  },
+  "homepage": "https://github.com/ExadelG4/EnglishTester#readme",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-qunit": "*",
+    "grunt-contrib-concat": "~1.0.1",
+    "grunt-contrib-jshint": "~1.0.0",
+    "grunt-contrib-uglify": "~2.0.0",
+    "grunt-usemin": "~3.1.1",
+    "grunt-contrib-copy": "~1.0.0",
+    "loadtest": "*"
+  },
+  "description": "",
+  "dependencies": {
+    "async": "^2.0.1",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.15.2",
+    "bootstrap-select": "^1.10.0",
+    "ejs": "^2.4.2",
+    "express": "~4.14.0",
+    "faker": "^3.1.0",
+    "jsonwebtoken": "~7.0.1",
+    "mongoose": "^4.5.3",
+    "moniker": "^0.1.2",
+    "ng-strict-di": "~2.0.0",
+    "nodemailer": "^2.5.0",
+    "nodemailer-smtp-transport": "^2.6.0",
+    "passport": "~0.3.2",
+    "passport-jwt": "~2.1.0",
+    "prompt": "^1.0.0",
+    "pubsub-js": "^1.5.3",
+    "q": "^1.4.1",
+    "uuid-js": "~0.7.5"
+  }
+}

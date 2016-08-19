@@ -1,0 +1,31 @@
+ <!--p class="card card-admin-home " ng-if="model.list.length">
+     <img src="{{model.imageLink}}">
+     <span ng-if="model.list.length < 4" ng-repeat="user in model.list track by $index"><a ng-click="personClick()">{{user.firstName}} {{user.lastName}}</a><span ng-if="!$last">, </span></span><span ng-if="model.list.length > 3"><a ng-click="personClick()">{{model.list.length}} people</a></span> {{model.messageText}}
+     <button type="button" class="btn btn-admin" ng-click="newsButtonClick()">{{model.buttonText}}</button>
+ </p-->
+
+
+ <div class="row" ng-if="model.list.length">
+    <div class="card card-user-home col-xs-12 col-sm-12 col-md-10 col-lg-offset-1 col-lg-8">
+        <div class="start col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <img src="{{model.imageLink}}">
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+        	<div class="info-about-button">
+            <span ng-if="model.list.length < 4" ng-repeat="user in model.list track by $index">
+            	<a ng-click="personClick()">{{user.firstName}} {{user.lastName}}</a>
+            	<span ng-if="!$last">, </span>
+            </span>
+            <span ng-if="model.list.length > 3">
+            	<a ng-click="personClick()">{{model.list.length}} people</a>
+            </span> 
+            	{{model.messageText}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-10 col-xs-2 col-sm-offset-11 col-sm-1">
+                <button class="btn-admin btn-start" ng-click="newsButtonClick()">{{model.buttonText}}</button>
+            </div>
+        </div>
+    </div>
+</div>

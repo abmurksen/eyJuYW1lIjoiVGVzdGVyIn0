@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+
+    <title>Система тестирования персонала</title>
+    <!--<link type="text/css" rel="stylesheet" href="site.min.css">-->
+
+    <link type="text/css" rel="stylesheet" href="../bower_components/nya-bootstrap-select/dist/css/nya-bs-select.css">
+    <link type="text/css" rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link type="text/css" rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link type="text/css" rel="stylesheet" href="../bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link type="text/css" rel="stylesheet" href="common/header/header.css">
+    <link type="text/css" rel="stylesheet" href="common/login/login.css">
+    <link type="text/css" rel="stylesheet" href="modules/tests/addQuestion/addQuestion.css">
+    <link type="text/css" rel="stylesheet" href="app.css">
+    <link type="text/css" rel="stylesheet" href="index.css">
+    <link type="text/css" rel="stylesheet" href="modules/admin/assignStd/assignStd.css">
+    <link type="text/css" rel="stylesheet" href="modules/admin/newUser/newUser.css">
+    <link type="text/css" rel="stylesheet" href="modules/statistic/statistic.css">
+    <link type="text/css" rel="stylesheet" href="modules/home/user/user-home.css">
+    <link type="text/css" rel="stylesheet" href="modules/admin/assignTch/assignTch.css">
+    <link type="text/css" rel="stylesheet" href="modules/tests/badQuestion/badQuestion.css">
+    <link type="text/css" rel="stylesheet" href="modules/home/home.css">
+    <link type="text/css" rel="stylesheet" href="infrastructure/toastr/toastr.css">
+    <link type="text/css" rel="stylesheet" href="modules/profile/editProfile/editProfile.css">
+    <link type="text/css" rel="stylesheet" href="modules/profile/check microphone/checkMicrophone.css">
+    <link type="text/css" rel="stylesheet" href="modules/home/user/passTest/templateTests/templateQue.css">
+    <link type="text/css" rel="stylesheet" href="modules/home/admin/admin-home.css">
+    <link type="text/css" rel="stylesheet" href="modules/home/teacher/teacher-home.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Montserrat:700|Pavanam" rel="stylesheet">
+
+
+</head>
+<body ng-controller="appController">
+    <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+    <header ng-if="!isLoginPage()" ng-include="'common/header/header.html'"></header>
+    <div class="container">
+        <div ui-view class="main"></div>
+    </div>
+
+
+<!-- поменять футер -->
+    <footer ng-if="!isLoginPage()"><h3 class="pull-right"><em>© , 2016</em></h3></footer>
+        <!-- build:js  lib.js-->
+        <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+        <script type="text/javascript" src="bower_components/d3.chart/d3.chart.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap-validator/js/validator.js"></script>
+        <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script type="text/javascript" src="bower_components/angular-soundmanager2/dist/angular-soundmanager2.js"></script>
+        <script type="text/javascript" src="bower_components/nya-bootstrap-select/dist/js/nya-bs-select.js"></script>
+        <script type="text/javascript" src="bower_components/angularAudioRecorder/dist/angular-audio-recorder.js"></script>
+        <script type="text/javascript" src="bower_components/wavesurfer.js/dist/wavesurfer.min.js"></script>
+
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="route.js"></script>
+        <script type="text/javascript" src="app.controller.js"></script>
+        <script type="text/javascript" src="modules/admin/admin-controller.js"></script>
+        <script type="text/javascript" src="modules/admin/newUser/newUser-controller.js"></script>
+        <script type="text/javascript" src="common/header/header-controller.js"></script>
+        <script type="text/javascript" src="common/login/login-controller.js"></script>
+        <script type="text/javascript" src="modules/home/home-controller.js"></script>
+        <script type="text/javascript" src="modules/home/teacher/teacher-home.controller.js"></script>
+        <script type="text/javascript" src="modules/home/admin/adminHome-service.js"></script>
+        <script type="text/javascript" src="modules/home/admin/admin-home.controller.js"></script>
+        <script type="text/javascript" src="modules/home/user/user-home.controller.js"></script>
+        <script type="text/javascript" src="modules/admin/assignStd/assignStd-controller.js"></script>
+        <script type="text/javascript" src="modules/admin/assignTch/assignTch-controller.js"></script>
+        <script type="text/javascript" src="modules/tests/badQuestion/badQuestion-controller.js"></script>
+        <script type="text/javascript" src="infrastructure/auth.service.js"></script>
+        <script type="text/javascript" src="modules/tests/tests-controller.js"></script>
+        <script type="text/javascript" src="modules/tests/addQuestion/addQuestion-controller.js"></script>
+        <script type="text/javascript" src="modules/tests/addQuestion/upload.js"></script>
+        <script type="text/javascript" src="infrastructure/news-statistics-service.js"></script>
+
+        <script type="text/javascript" src="modules/statistic/statistics-route.js"></script>
+        <script type="text/javascript" src="modules/statistic/statistic-controller.js"></script>
+        
+        <script type="text/javascript" src="modules/tests/tests-route.js"></script>
+        <script type="text/javascript" src="modules/home/user/user-home.controller.js"></script>
+        <script type="text/javascript" src="modules/home/user/passTest/passTest-controller.js"></script>
+        <script type="text/javascript" src="modules/admin/admin-route.js"></script>
+        <script type="text/javascript" src="modules/home/user/user-route.js"></script>
+        <script type="text/javascript" src="modules/profile/profile-controller.js"></script>
+        <script type="text/javascript" src="modules/profile/editProfile/editProfile-controller.js"></script>
+        <script type="text/javascript" src="modules/profile/profile-route.js"></script>
+        <script type="text/javascript" src="modules/profile/check microphone/checkMicrophone-controller.js"></script>
+        <script type="text/javascript" src="modules/home/teacher/teacher-home.controller.js"></script>
+        <script type="text/javascript" src="modules/home/teacher/teacher-home.route.js"></script>
+        <script type="text/javascript" src="modules/home/teacher/check test/checkTest-controller.js"></script>
+        <script type="text/javascript" src="common/directives/commonDirectiveModule.js"></script>
+        <script type="text/javascript" src="common/directives/newsDirective.js"></script>
+        <script type="text/javascript" src="modules/home/guest/guest-home-controller.js"></script>
+
+        <script type="text/javascript" src="infrastructure/context.js"></script>
+        <script type="text/javascript" src="infrastructure/event-emitter.js"></script>
+        <script type="text/javascript" src="infrastructure/eventWrapper.js"></script>
+        <script type="text/javascript" src="infrastructure/toastr/toastr.js"></script>
+        <script type="text/javascript" src="infrastructure/notifications.js"></script>
+        <script type="text/javascript" src="infrastructure/http.service.js"></script>
+        <script type="text/javascript" src="infrastructure/navigation.factory.js"></script>
+        <script type="text/javascript" src="infrastructure/api/user.service.js"></script>
+        <script type="text/javascript" src="run.js"></script>
+            <!-- endbuild -->
+
+</body>
+
+
+</html>

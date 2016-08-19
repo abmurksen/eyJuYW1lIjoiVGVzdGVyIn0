@@ -1,0 +1,22 @@
+<div class="contaoner-fluid">
+	<div class="row">
+		<div class="main-que col-xs-12 col-offset-sm-2 col-sm-10">
+			<form>
+				<label  class="label-text-que">
+					{{$index + 1}}. Listen and answer
+				</label>
+				<sound-manager>
+    				<div class="seekBase seekBase-user" seek-track>
+       					<div class="seekLoad seekLoad-user" ng-style="{width : ( progress + '%' ) }"></div>
+       				</div>
+					<button music-player="play" add-song="forSong[$index]" class="btn-user btn-music btn-music-play" ng-click="startPlay()" ng-if="!isPlayingMy"></button>
+					<button play-music class="btn-user btn-music btn-music-play" ng-if="isPlayingMy"></button>
+					<button pause-music class="btn-user btn-music btn-music-pause"></button>
+					<button stop-music class="btn-user btn-music btn-music-stop"></button>
+    			</sound-manager>
+    			<textarea class="textarea-que" name="ans" ng-model="omg.tempChoise" ng-change="changeValidRT(currentPage)" placeholder="Write here..">
+				</textarea>		
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,103 @@
+.step2 {
+    padding: 15px;
+}
+
+.formSelect {
+    display: inline-block;
+    padding: 0;
+}
+
+    .formSelect img {
+        height: 35px;
+        width: 35px;
+    }
+
+    .formSelect h3 {
+       width: 100%;
+    }
+
+.step1, .step2 {
+    display: inline-block;
+}
+
+.sel2 div .cal1, .sel2 div .cal2 {
+    padding: 0;
+    margin-top: 33px;
+}
+
+.sel4 {
+    margin-left: 15%;
+    margin-top: 38px;
+}
+
+/*.sel2 input[type="radio"] {
+    display: inline-block;
+    height: inherit;
+    width: initial;
+}*/
+
+
+.time {
+    margin: 0 !important;
+}
+
+.submitNewUser {
+    margin-top: 5px;
+}
+
+.disableUser {
+    text-decoration: line-through;
+}
+
+.noDisableUser {
+    text-decoration: none;
+}
+
+.dateIcon {
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    border: 0;
+}
+
+.reset {
+    margin-left: 10px;
+}
+
+.div-btn-group {
+    text-align: right;
+    margin: 15px 0 0 0
+}
+
+.select-list {
+    width: 100%;
+    overflow-y: hidden;
+    border: 1px solid rgb(47, 196, 241);
+}
+
+.select-list > option {
+    padding: 3px;
+    font-size: 1.2em;
+}
+
+ol button {
+    background-color: rgb(47, 196, 241) !important;
+    background-image: none !important;
+    font-size: 1.3em !important;
+    padding-top: 5px !important;
+    color: white !important;
+    border: none !important;
+}
+
+p span button, p span button:hover, p span button:active {
+    background-image: none !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+@media(max-width: 768px) {
+    .sel4 {
+        margin-left: 0;
+        margin-top: 0;
+    }
+}

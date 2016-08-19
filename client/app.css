@@ -1,0 +1,186 @@
+body {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+body, html {
+    min-height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+textarea, input[type="text"], select, a {
+    outline: none !important;
+}
+
+button, .input-btn {
+    padding: 5px 13px 5px 13px;
+    font-size: 1.4em;
+    border-radius: 5px;
+    box-shadow: none;
+    border-width: 0;
+    height: 35px;
+    color: white;
+    font-family: 'Pavanam', sans-serif;
+    outline: none !important;
+    font-weight: normal;
+}
+
+button:disabled {
+    color: #d0d0d0;
+}
+
+.btn, input, select, option, li, textarea, p, a, span {
+    font-family: 'Pavanam', sans-serif;
+    font-weight: normal;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Pavanam', sans-serif;
+    font-weight: bold;
+}
+
+label {
+    font-family: 'Pavanam', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.btn-user, .seekLoad-user{
+    background-color: rgb(91, 212, 145);
+}
+
+.btn-admin, .seekLoad-admin {
+    background-color: rgb(47, 196, 241);
+}
+
+.btn-teacher, .seekLoad-teacher {
+    background-color: rgb(232, 134, 18);
+}
+
+.btn-user:hover {
+    background-color: rgb(99, 249, 168);
+}
+
+.btn-admin:hover {
+    background-color: rgb(140, 215, 239);
+}
+
+.btn-teacher:hover {
+    background-color: rgb(255, 191, 81);
+}
+
+.btn-user:disabled, .seekBase-user {
+    background-color: rgb(96, 121, 107);
+}
+
+.btn-admin:disabled, .seekBase-admin {
+    background-color: #2e6da4;
+}
+
+.btn-teacher:disabled, .seekBase-teacher {
+    background-color: rgb(181, 99, 19);
+
+}
+
+h1, h2, h3, h4, h5 {
+    text-align: center;
+    display: inline-block;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 10px !important;
+    height: 35px;
+    outline: none;
+    border-color: rgba(51, 51, 51, 0.34);
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-radius: 0px !important;
+    font-size: 1.3em;
+    box-shadow: none !important;
+}
+
+textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    resize: none;
+    width: 100%;
+    height: 150px;
+    border-color: rgb(204,204,204);
+    font-size: 1.3em;
+
+}
+
+input::-webkit-input-placeholder {
+  color: rgb(150, 150, 150);
+}
+
+.input-user:focus, .textarea-user:focus {
+    border-color: rgb(91, 212, 145);
+}
+
+.input-admin:focus, .textarea-admin:focus {
+    border-color: rgb(42, 171, 210);
+}
+
+.input-teacher:focus, .textarea-teacher:focus {
+    border-color: rgb(232, 134, 18);
+}
+
+.input-user:focus::-webkit-input-placeholder, .textarea-user:focus::-webkit-input-placeholder {
+    color: rgb(91, 212, 145);
+}
+
+.input-admin:focus::-webkit-input-placeholder, .textarea-admin:focus::-webkit-input-placeholder {
+    color: rgb(42, 171, 210);
+}
+
+.input-teacher:focus::-webkit-input-placeholder, .textarea-teacher:focus::-webkit-input-placeholder {
+    color: rgb(232, 134, 18);
+}
+.seekLoad {
+    height: 3px;
+}
+.seekBase {
+    margin: 10px;
+}
+
+.btn-music {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-repeat: round;
+    margin: 5px;
+}
+
+.btn-music-play {
+    background-image: url(assets/images/icons/play.png);
+}
+
+.btn-music-pause {
+    background-image: url(assets/images/icons/pause.png);
+}
+
+.btn-music-stop {
+    background-image: url(assets/images/icons/stop.png);
+}
+
+.btn-music-start-record {
+    background-image: url(assets/images/icons/microphone.png);
+}
+
+.div-music-player {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+select {
+    border-radius: 1px !important;
+}
+
+.disable {
+   margin-top: 10px;
+}
+

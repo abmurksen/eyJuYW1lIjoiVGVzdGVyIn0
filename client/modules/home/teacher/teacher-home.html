@@ -1,0 +1,14 @@
+<div class="container" ng-controller="teacherHomeController">
+    <div class="row">
+    <div class="div-empty" ng-if="length === 0">У вас нет тестов для проверки</div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="que in list">
+            <div class="card card-teacher">
+                <div class="date-color-teacher"> {{date[$index]}}</div>
+                <div class="level-info">
+                    Level: {{que.level}} of 5
+                </div>
+                <button class="btn-teacher btn-left" ng-click="startCheck($index)" ui-sref="checkTest">Начать</button>
+            </div>
+        </div>
+    </div> 
+</div>

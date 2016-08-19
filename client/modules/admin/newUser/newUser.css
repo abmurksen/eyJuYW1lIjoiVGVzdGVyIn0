@@ -1,0 +1,67 @@
+.error-mes {
+    display: inline-block;        
+    color: #c53535;
+    font-size: 1.3em;
+}
+
+.dateTime {
+    width: 100%;
+    padding-right: 0;
+}
+.dateTime1 {
+    margin-top: 5px;
+}
+.dateTime2 {
+    margin-top: 43px;
+    margin-bottom: 60px;
+}
+
+    .dateTime > div:first-child {
+        margin-top: 33px;
+    }
+
+    .dateTime  div {
+        padding: 0 !important;
+    }
+
+.time > table{
+   float: right;
+}
+
+.chooseDateTime {
+    width: 255px;
+    position: inherit;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.formAddUser label {
+    margin-top: 10px;
+}
+
+.img-date {
+    padding: 0;
+    width: 35px;
+    height: 35px;
+}
+
+.img-new-user {
+    width: 64px;
+    display: block;
+    margin: auto;
+}
+
+.h3-block {
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .dateTime2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .newUserDate {
+        margin-top: 20px;
+    }
+}

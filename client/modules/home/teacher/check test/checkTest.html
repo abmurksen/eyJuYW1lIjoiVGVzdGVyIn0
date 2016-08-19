@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+		<div class="div-test col-xs-12 col-sm-8 col-md-offset-1 col-md-6 col-lg-offset-2 col-lg-6">
+
+			<button ng-click="setNumPage(currentPage - 1)" ng-disabled="currentPage === 1" class="btn-teacher btn-prev">Пред</button>
+
+			<uib-pagination class="pagination-sm teacher-pagi" items-per-page="1" ng-model="currentPage" total-items="totalCount" max-size="4" boundary-link-numbers="true" direction-links="false" ng-change="pageChanged(copyCurrentPage, currentPage)"> 
+			</uib-pagination>
+
+			<button ng-click="setNumPage(currentPage + 1)" ng-disabled="currentPage === totalCount" class="btn-teacher btn-next">След</button>
+			<div ng-repeat="question in allQuestions track by $index">
+				<div ng-if="$index === $parent.currentPage - 1" ng-include="urls[question.type]">
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+			<h3 class="label-missing" for="missing-que">Пропущены</h3>
+			<span id="missing-que" ng-repeat="question in allQuestions track by $index"> 
+				<span ng-if="dirty[$index] && !forValidMark[$index]"><button ng-click="setNumPage($index + 1)" class="btn-missing">{{$index + 1}}</button></span>
+			</span>
+			<button class="btn-teacher btn-submit" ng-disabled="!validAll()" ng-click="finishCheck(currentPage)">Отправить</button>
+		</div>
+	</div>
+</div>

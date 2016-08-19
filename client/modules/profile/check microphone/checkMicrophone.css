@@ -1,0 +1,17 @@
+.sound-block {
+	display: block !important;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.check-label {
+	width: 100%;
+	padding: 15px 5px 0 5px;
+    font-size: 1.4em;
+    font-family: 'Pavanam', sans-serif;
+    text-align: center;
+}
+
+.all-check {
+	margin-bottom: 20px; 
+}

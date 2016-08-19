@@ -1,0 +1,57 @@
+<div ng-controller="newUserController">
+    <div class="pull-left col-xs-12 col-sm-6 col-md-5 col-lg-5">
+        <div><img class="img-new-user" src="assets/images/icons/addUser.png"></div>
+        <h3 class="h3-block">Создать учётную запись</h3>
+            <form name="user" class="formAddUser"  ng-model="formAddingUser" novalidate>
+                <label>Имя: </label>
+                <!--<span ng-show="user.first.$error.required && user.first.$dirty" class="error-mes">This field is required</span>-->
+                <input ng-focus="true" type="text" name="first" ng-model="firstMd" class="form-control input-admin" aria-label="..." placeholder="Ivan" required/>
+                <label>Фамилия: </label>
+                <!--<span ng-show="user.second.$error.required && user.second.$dirty" class="error-mes">This field is required</span>-->
+                <input type="text" name="second" ng-model="secondMd" class="form-control input-admin" aria-label="..." placeholder="Petrov" required>
+                <label>E-mail: </label>
+                <!--<span ng-show="user.email.$error.required && user.email.$dirty" class="error-mes">This field is required</span>-->
+                <span ng-show="user.email.$invalid && user.email.$dirty && !user.email.$error.required" class="error-mes">Введите правильный e-mail адрес</span>
+                <input type="email" name="email" ng-model="emailMd" class="form-control input-admin" aria-label="..." placeholder="someadress@post.com" required>
+                <label>телефон: </label>
+                <!--<span ng-show="user.phnumber.$error.required && user.phnumber.$dirty" class="error-mes">This field is required</span>-->
+                <span ng-show="user.phnumber.$invalid && user.phnumber.$dirty && !user.phnumber.$error.required" class="error-mes">введите корректный номер</span>
+                <input type="text" name="phnumber" ng-model="phnumberMd" class="form-control input-admin" aria-label="..." placeholder="+375299379992" ng-pattern="'[+]{1}[375]{1}[0-9]{11,11}'" required>
+            </form>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-5 col-lg-offset-1 col-lg-5 newUserDate">
+        <div><img class="img-new-user" src="assets/images/icons/time.png"></div>
+        <h3 class="h3-block">выберите время когда доступен тест</h3>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left dateTime dateTime1">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 cal1 pull-left">
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup ng-model="dt" is-open="popup1.opened" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default dateIcon" ng-click="open1()"><img class="img-date" src="assets/images/icons/date.png"></button>
+                            </span>
+                </p>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 time">
+                <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right dateTime dateTime2">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 cal1 pull-left">
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup ng-model="dt2" is-open="popup2.opened" min-date="minDate2" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default dateIcon" ng-click="open2()"><img class="img-date" src="assets/images/icons/date.png"></button>
+                        </span>
+                </p>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 time">
+                <div uib-timepicker ng-model="mytime2" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+            </div>
+        </div>
+        <button class="btn-admin btn-submit" ng-disabled="user.$invalid || !dt || !dt2 || !mytime || !mytime2" ng-click = "newUser()" >Создать</button>
+
+    </div>
+</div>

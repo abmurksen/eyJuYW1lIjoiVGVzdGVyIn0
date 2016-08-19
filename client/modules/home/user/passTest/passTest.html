@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="row">
+		<div class="div-test col-xs-12 col-sm-8 col-md-offset-1 col-md-6 col-lg-offset-2 col-lg-6">
+
+			<button ng-click="setNumPage(currentPage - 1)" ng-disabled="currentPage === 1" class="btn-user btn-prev">Prev</button>
+
+			<uib-pagination class="pagination-sm user-pagi" items-per-page="1" ng-model="currentPage" total-items="totalCount" max-size="4" boundary-link-numbers="true" direction-links="false" ng-change="pageChanged(copyCurrentPage, currentPage)" > 
+			</uib-pagination>
+			
+			<button ng-click="setNumPage(currentPage + 1)" ng-disabled="currentPage === totalCount" class="btn-user btn-next">Next</button>
+			<div ng-repeat="question in allQuestions track by $index">
+				<div ng-if="$index === $parent.currentPage - 1" ng-include="urls[question.type]">
+				</div>
+			</div>
+
+			<div class="div-fing">
+				<button class="btn-user btn-fing" ng-class="{'bnt-bad-que':userAnswers[currentPage - 1].badForUser,'btn-good-que': !userAnswers[currentPage - 1].badForUser}" id="btn-fing" ng-click="addBadForUser(currentPage - 1)"></button>
+				<label class="label-fing" for="btn-fing" ng-if="!userAnswers[currentPage - 1].badForUser">If you think <br> question with an error,<br> press the button</label>
+				<label class="label-fing" for="btn-fing" ng-if="userAnswers[currentPage - 1].badForUser">If you change mind<br> about question, <br>press the button</label>
+			</div>
+
+			<!--form name="num" class="form-num">
+				<input name="numPage" ng-model="neededNumPage" ng-pattern="'[0-9]{1,10}'" ng-change="validNeededNumPage = true;" placeholder="Number of question" class=".input-user input-num-que">
+				<button ng-click="setNumPage(neededNumPage)" ng-disabled="num.numPage.$invalid" class="btn-user btn-num-que">Go</button>
+				<span ng-show="!validNeededNumPage" class="error-mes">Question not found</span>
+
+			</form-->
+
+			
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+			<label for="time" class="label-have-time">
+				<span class="have-time" id="time">{{timerHours}} : {{timerMin}} : {{timerSec}}</span>
+			</label class="label-have-time">
+			<div >
+				<h3 class="label-missing" for="missing-que">You missing</h3>
+				<span id="missing-que" ng-repeat="question in allQuestions track by $index"> 
+					<span ng-if="dirty[$index] && !validAnswers[$index]"><button ng-click="setNumPage($index + 1)" class="btn-missing">{{$index + 1}}</button></span>
+				</span>
+			</div>
+			<button class="btn-user btn-submit" ng-if="whichPart === 1" ng-disabled="!allValidAnswers()" ng-click="sendFirstPart(currentPage)">Submit</button>
+			<button class="btn-user btn-submit" ng-if="whichPart === 2" ng-disabled="!allValidAnswers()" ng-click="sendSecondPart(currentPage, true)">Submit</button>
+		</div>
+	</div>
+</div>

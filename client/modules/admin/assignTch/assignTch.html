@@ -1,0 +1,37 @@
+<div class="formWrapper">
+    <div class="row" ng-controller="assignTchController">
+        <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 form-group sel2 sel2Tch">
+
+            <ol class="nya-bs-select" size="7" title="Выбрать пользователя" ng-model="selectedItem3" data-live-search="true" ng-change="chooseUser(selectedItem3)">
+                <li nya-bs-option="student in students">
+                    <a>
+                        {{ student.fullName }}
+                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                    </a>
+                </li>
+            </ol>
+
+            <input type="text" ng-model="stdName" placeholder="User's name" class="disable" disabled>
+            <input type="text" ng-model="stdMail" placeholder="User's mail" class="disable" disabled>
+            <input type="text" ng-model="stdTel" placeholder="User's telephone" class="disable" disabled>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5 form-group sel1 sel1Tch">
+
+            <ol class="nya-bs-select" size="7" title="Выбрать учителя" ng-model="selectedItem2" data-live-search="true" ng-change="chooseTeacher(selectedItem2)">
+                <li nya-bs-option="teacher in teachers">
+                    <a>
+                        {{ teacher.fullName }} ({{teacher.assignTest}}/{{teacher.totalTests}})
+                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                    </a>
+                </li>
+            </ol>
+
+            <input type="text" ng-model="tchName" placeholder="Teacher's name" class="disable" disabled>
+            <input type="text" ng-model="tchMail" placeholder="Teacher's mail" class="disable" disabled>
+            <input type="text" ng-model="tchTel" placeholder="Teacher's telephone" class="disable" disabled>
+        </div>
+        <!--p class="comment"><em>Teacher: (*/*) - count of assign tests / count of total checked tests</em></p-->
+        <button class="btn-admin btn-submit" type="submit" ng-click="submitTchStd()" ng-disabled="!selectedItem2 || !selectedItem3">Подтвердить</button>
+    </div>
+
+</div>

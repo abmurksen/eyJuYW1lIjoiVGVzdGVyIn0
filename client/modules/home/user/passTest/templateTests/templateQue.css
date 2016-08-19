@@ -1,0 +1,244 @@
+.div-test {
+    position: relative;
+}
+
+.icon {
+	width: 22px;
+    height: 22px;
+    margin-right: 15px;
+    margin-left: 7px;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.radio-icon {
+    background-image: url(../../../../../assets/images/icons/radio-off.png);
+}
+
+.checkbox-icon {
+    background-image: url(../../../../../assets/images/icons/checkbox-off.png);
+}
+
+input[type="radio"]:checked+label > .radio-icon{
+    background-image: url(../../../../../assets/images/icons/radio-on.png);
+}
+
+input[type="checkbox"]:checked+label > .checkbox-icon{
+    background-image: url(../../../../../assets/images/icons/checkbox-on.png);
+}
+
+input[type="radio"], input[type="checkbox"] {
+	display: none;
+}
+
+.div-ans {
+    border-color: rgb(197, 243, 214);
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    margin: 10px 0 10px 0;
+}
+
+.div-ans:hover {
+    background-color: rgba(232, 255, 254, 0.66);
+}
+
+.main-label {
+	width: 100%;
+    padding: 15px; 
+    font-size: 1.5em;
+    font-family: 'Pavanam', sans-serif;
+
+}
+
+.label-text-que {
+    margin-top: 25px;
+    font-size: 1.8em;
+    display: block;
+    -webkit-user-select: none;
+}
+
+.btn-next {
+    margin-left: -4px;
+    border-radius: 0 5px 5px 0;
+}
+
+.btn-prev {
+    margin: 0 -4px 0 15px;
+    border-radius: 5px 0 0 5px;
+}
+
+
+.textarea-que {
+    width: 100%;
+    height: 120px;
+    margin-top: 15px;
+    resize: none;
+    padding: 10px;
+}
+
+.form-num {
+    display: block;
+    vertical-align: middle;
+    margin: 70px 0 0 15px;
+}
+
+.pagination {
+    margin-bottom: -11px;
+    border-radius: 0;
+}
+
+.pagination> .active > a, .pagination> .active > a:hover, .pagination> li > a:hover {
+    color: white;
+}
+
+
+.pagination > li > a {
+    color: rgba(51,51,51,1);
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 0 !important;
+}
+
+.user-pagi> .active > a, .user-pagi> .active > a:hover, .user-pagi> .active > a:focus {
+    background-color: rgb(91, 212, 145);
+    border-color: rgb(91, 212, 145);
+}
+
+.user-pagi> li > a:hover {
+    background-color: rgb(99, 249, 168);
+    border-color: rgb(99, 249, 168);
+}
+
+.admin-pagi> .active > a, .admin-pagi> .active > a:hover, .admin-pagi> .active > a:focus {
+    background-color: rgb(47, 196, 241);
+    border-color: rgb(47, 196, 241);
+}
+
+.admin-pagi> li > a:hover {
+    background-color: rgb(140, 215, 239);
+    border-color: rgb(140, 215, 239);
+}
+
+.teacher-pagi> .active > a, .teacher-pagi> .active > a:hover, .teacher-pagi> .active > a:focus {
+    background-color: rgb(232, 134, 18);
+    border-color: rgb(232, 134, 18);
+}
+
+.teacher-pagi> li > a:hover {
+    background-color: rgb(255, 191, 81);
+    border-color: rgb(255, 191, 81);
+}
+
+.input-num-que {
+    width: 145px;
+    vertical-align: middle;
+}
+
+.btn-num-que {
+    vertical-align: middle;
+    border-radius: 0 5px 5px 0;
+}
+
+.label-have-time {
+    text-align: center;
+    font-size: 2em;
+    display: block;
+    background-color: rgba(232, 255, 254, 0.79);
+    border-radius: 5px !important;
+}
+
+.have-time {
+    display: block;
+}
+.div-fing {
+    display: inline-flex;
+    margin-top: 40px;
+}
+
+.btn-fing {
+    width: 40px;
+    height: 40px;
+    margin: 15px 20px 0 20px;
+    background-size: contain;
+    background-color: rgba(255, 255, 255, 0);
+    display: block;
+
+}
+.btn-fing:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.bnt-bad-que {
+    background-image: url(../../../../../assets/images/icons/bad-question.png);
+}
+.btn-good-que {
+    background-image: url(../../../../../assets/images/icons/good-question.png);
+}
+.btn-hz-que {
+    background-image: url(../../../../../assets/images/icons/hz-question.png);
+}
+
+.btn-fing + .label-fing {
+    display: none;
+}
+
+.btn-fing:hover + .label-fing {
+    display: inline;
+    font-size: 1.2em;
+}
+
+.label-missing {
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.btn-missing {
+    display: inline-block;
+    font-size: 1.5em;
+    color: rgb(51,51,51);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #c53535;
+    color: white;
+    margin-bottom: 5px;
+}
+}
+
+.a-missing {
+    text-decoration: none;
+}
+.btn-submit {
+    display: block;
+    margin: 30px auto 0 auto;
+    width: 150px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 2em;
+}
+
+.div-check-answer {
+    font-size: 1.6em;
+    padding: 10px;
+    background-color: rgba(255, 245, 171, 0.42);
+    margin-bottom: 30px;
+}
+
+@media (max-device-width: 767px) {
+    .btn-fing +.label-fing {
+        display: inline;
+    }
+}
+
+@media (max-width: 767px) {
+     .div-fing {
+        margin: 15px 0;
+    }
+    .pagination {
+        display: none;
+    }
+}

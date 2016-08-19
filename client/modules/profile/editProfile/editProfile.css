@@ -1,0 +1,124 @@
+.profile {
+    position: relative;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+    .info > * {
+        margin-bottom: 10px;
+    }
+
+    .profile input{
+        height: 35px;
+        margin-top: 15px;
+        font-size: x-large;
+        padding: 5px;
+    }
+
+    .info a {
+        margin-bottom: 0;
+        height: 45px;
+    }
+
+    .info span {
+        margin-top: 10px;
+    }
+
+    .info img {
+        height: 45px;
+        margin-top: 10px;
+        cursor: pointer;
+        vertical-align: bottom;
+    }
+
+.input-with-img {
+    width: calc(100% - 80px);
+
+}
+
+.submit {
+    margin-left: 45%;
+}
+
+.namesOfShedule > ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+    .namesOfShedule li {
+        padding: 0;
+    }
+
+    .namesOfShedule ul li span {
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+
+.graphicWrapper span {
+    margin-top: 8px;
+    font-weight: bold;
+    text-align: center;
+    font-size: large;
+    color: grey;
+}
+
+hr {
+    border: none;
+    background-color: lightgrey;
+    color: grey;
+    height: 2px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.wrapperShedule {
+    margin-top: 350px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.wrapperShedule h3 {
+    width: 100%;
+    color: grey;
+}
+
+.chart {
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+    .chart div {
+        width: 0;
+        border-radius: 0 5px 5px 0 !important;
+        transition: all 1s ease-out;
+        -moz-transition: all 1s ease-out;
+        -webkit-transition: all 1s ease-out;
+    }
+
+    .chart div {
+        font: 10px sans-serif;
+        background-color: #2aabd2;
+        text-align: right;
+        padding: 3px;
+        margin: 5px;
+        color: white;
+        box-shadow: 2px 2px 2px #666;
+    }
+
+    .chart > div {
+        font-size: larger;
+    }
+
+    .chart div:hover::after {
+        content: attr(data-title);
+    }
