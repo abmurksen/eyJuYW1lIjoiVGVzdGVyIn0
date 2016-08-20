@@ -11,6 +11,7 @@
                 "There isn't any", 
                 "There aren't no"
             ],
+            "bad":false,
             "complaint" : false,
             "type" : "oneOfMany"
         }
