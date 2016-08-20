@@ -1,0 +1,60 @@
+[{
+    "firstName" : "Burnice",
+    "lastName" : "Shields",
+    "fullName" : "Burnice Shields admin1@mail.ru",
+    "email" : "admin1@mail.ru",
+    "password" : "a1",
+    "status" : "free",
+    "number" : "+375291111111",
+    "role" : "admin"
+},
+{
+    "firstName" : "Иван",
+    "lastName" : "Иванов",
+    "fullName" : "Иванов Иван i@mail.ru",
+    "email" : "user1@exadel.com",
+    "password" : "i",
+    "status" : "free",
+    "number" : "+375291111112",
+    "role" : "admin"
+},
+{
+    "firstName" : "Людмила",
+    "lastName" : "Васильева",
+    "fullName" : "Васильева Людмила v@mail.ru",
+    "email" : "v@mail.ru",
+    "password" : "v",
+    "status" : "free",
+    "number" : "+375291111113",
+    "role" : "user"
+},
+{
+    "firstName" : "Антонина",
+    "lastName" : "Жирова",
+    "fullName" : "Жирова Антонина g@mail.ru",
+    "email" : "g@mail.ru",
+    "password" : "g",
+    "status" : "free",
+    "number" : "+375291111114",
+    "role" : "teacher"
+},
+{
+    "firstName" : "Михаил",
+    "lastName" : "Калинин",
+    "fullName" : "Калинин Михаил k@mail.ru",
+    "email" : "k@mail.ru",
+    "password" : "k",
+    "status" : "free",
+    "number" : "+375291111115",
+    "role" : "guest"
+},
+{
+    "firstName" : "Вячеслав",
+    "lastName" : "Пахомов",
+    "fullName" : "Пахомов Вячеслав p@mail.ru",
+    "email" : "p@mail.ru",
+    "password" : "p",
+    "status" : "free",
+    "number" : "+375291111116",
+    "role" : "user"
+}]
