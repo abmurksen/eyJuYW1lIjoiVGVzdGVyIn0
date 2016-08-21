@@ -5,6 +5,7 @@ var path = require('../config.json')
 
 var user = require('./schemes/user');
 var testA = require('./schemes/testA');
+var testDemo = require('./schemes/testDemo');
 var testB = require('./schemes/testB');
 var stack = require('./schemes/stack');
 var results = require('./schemes/results');
@@ -17,6 +18,7 @@ exports.stackAs = stack;
 exports.resultsAs = results;
 exports.user = infrostructure(user);
 exports.testA  = infrostructure(testA);
+exports.testDemo  = infrostructure(testDemo);
 exports.testB = infrostructure(testB);
 exports.stack = infrostructure(stack);
 exports.results = infrostructure(results);

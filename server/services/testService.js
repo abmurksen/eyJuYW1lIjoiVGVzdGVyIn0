@@ -1,4 +1,5 @@
 var testA = require('../db/mongo').testA;
+var testDemo = require('../db/mongo').testDemo;
 var testB = require('../db/mongo').testB;
 var testMaker = require('../logic/testMaker');
 var q = require('q');
@@ -27,6 +28,11 @@ function addNewQuestionB(info){
 function removeCollection(query){
 	return testA.remove(query);
 }
+
+function removeCollectionDemo(query){
+	return testDemo.remove(query);
+}
+
 function removeCollectionB(query){
 	return testB.remove(query);
 }
@@ -46,6 +52,9 @@ function getComplaintedB(){
 }
 function addQuestionArrayA(info){
 	return testA.create(info);
+}
+function addQuestionArrayDemo(info){
+	return testDemo.create(info);
 }
 function addQuestionArrayB(info){
 	return testB.create(info);
@@ -190,10 +199,12 @@ module.exports.addNewQuestionB = addNewQuestionB;
 module.exports.removeCollection = removeCollection;
 module.exports.getTest= getTest;
 module.exports.removeCollectionB = removeCollectionB;
+module.exports.removeCollectionDemo = removeCollectionDemo;
 module.exports.getSecondTest = getSecondTest;
 module.exports.getComplaintedA = getComplaintedA;
 module.exports.getComplaintedB = getComplaintedB;
 module.exports.addQuestionArrayA = addQuestionArrayA;
+module.exports.addQuestionArrayDemo = addQuestionArrayDemo;
 module.exports.addQuestionArrayB = addQuestionArrayB;
 module.exports.result = result;
 module.exports.checkTest = checkTest;
