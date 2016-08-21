@@ -60,6 +60,41 @@ router.get('/getTest',  passport.authenticate('jwt', { session: false }),functio
 		
 });
 
+//--------------for demonstration (one demonstratio test)
+
+
+router.get('/getTestDemo',  passport.authenticate('jwt', { session: false }),function(req, res){
+		if(req.user.role == 'user' || req.user.role == 'guest' ){
+       		stackService.findOpenTests({userId: req.user._id},{},{}).then(function (data){
+			if(data[0] !== undefined){
+				testService.getTestDemo().then(function(data){
+					res.send(data);
+					stackService.removeOpenTestsCollection({userId: req.user._id}).then(function(data){
+						service.updateStatus(req.user._id, 'stack');
+					}).catch(function(err){
+						res.status(401).send(err);
+					})
+				}).catch(function(err){
+					res.status(401).send(err);
+				});
+			}else{
+				res.status(401).send("unauthorized");
+			}
+		}).catch(function(err){
+			res.json(err);
+		});
+    	}
+    	else{
+        	res.status(403).send('Forbidden');
+    	}
+		
+});
+
+
+
+
+//----------------------------
+
 router.post('/submit1', contracts.submit1, passport.authenticate('jwt', { session: false }), function(req,res){
 	service.submit1(req.body, req.user._id).then(function(data){
 		res.json(data);

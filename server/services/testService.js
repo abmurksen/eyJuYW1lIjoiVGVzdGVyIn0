@@ -40,6 +40,15 @@ function getTest(user){
 	return testMaker.make(testA,user);
 }
 
+//-----------------
+
+function getTestDemo(user){
+
+	return testDemo.find({bad: false },{'answers': 0},{});
+}
+
+
+//-----------------
 function getSecondTest(level){
 	return testMaker.makeAgain(testB,level);
 }
