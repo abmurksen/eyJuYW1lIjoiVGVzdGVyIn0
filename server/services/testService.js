@@ -46,6 +46,30 @@ function getTestDemo(user){
 
 	return testDemo.find({bad: false },{},{});
 }
+function getComplaintedDemo(){
+	return testDemo.find({complaint: true},{'type':1, 'question':1, 'options':1},{});
+}
+
+
+function blockComplainedDemo(A){
+	var pr = q.defer();
+	testDemo.update({_id : {$in : A}},{ $set: { bad: true, complaint: false }},{multi: true}).then(function(data){
+			pr.resolve();
+	}).catch(function(err){
+		pr.reject(err);
+	})
+	return pr.promise;
+}
+
+function disblockComplainedDemo(A){
+	var pr = q.defer();
+	testDemo.update({_id : {$in : A}},{ $set: { complaint: false, bad : false }},{multi: true}).then(function(data){
+			pr.resolve();		
+	}).catch(function(err){
+		pr.reject(err);
+	})
+	return pr.promise;
+}
 
 
 //-----------------
@@ -213,6 +237,7 @@ module.exports.removeCollectionDemo = removeCollectionDemo;
 module.exports.getSecondTest = getSecondTest;
 module.exports.getComplaintedA = getComplaintedA;
 module.exports.getComplaintedB = getComplaintedB;
+module.exports.getComplaintedDemo = getComplaintedDemo;
 module.exports.addQuestionArrayA = addQuestionArrayA;
 module.exports.addQuestionArrayDemo = addQuestionArrayDemo;
 module.exports.addQuestionArrayB = addQuestionArrayB;
@@ -222,3 +247,6 @@ module.exports.findA = findA;
 module.exports.findB = findB;
 module.exports.blockComlained = blockComplained;
 module.exports.disblockComlained = disblockComplained;
+module.exports.blockComlainedDemo = blockComplainedDemo;
+module.exports.disblockComlainedDemo = disblockComplainedDemo;
+

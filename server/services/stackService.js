@@ -1,5 +1,6 @@
 var stack = require('../db/mongo').stack;
 var testA = require('../db/mongo').testA;
+var testDemo = require('../db/mongo').testDemo;
 var results = require('../db/mongo').results;
 var request = require('../db/mongo').request;
 var openTests = require('../db/mongo').openTests;
@@ -205,7 +206,7 @@ function checkFirstPartDemo(data, id){
 	stack.findOne({userId: id}).then(function(stackRecord){
 			data.forEach(function(element) {
 				if(element.badForUser){
-					testA.update({_id:element.qId},{ $set: { complaint: true }},{});
+					testDemo.update({_id:element.qId},{ $set: { complaint: true }},{});
 				}
 				stackRecord.answersAuto.forEach(function(element1) {
 					if(element.qId == element1._qId){

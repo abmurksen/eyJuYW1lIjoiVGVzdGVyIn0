@@ -243,7 +243,34 @@ router.get('/getReportDemo',function(req, res){
 	});
 });
 
+router.get('/getComplaintedDemo',passport.authenticate('jwt', { session: false }),function(req, res){
+	roleSecurity(req,res,'admin',function(){
+		testService.getComplaintedDemo().then(function(data){
+			res.send(data);
+		});
+  	});
+	
+});
 
+router.post('/blockComplainedDemo',passport.authenticate('jwt', { session: false }), function(req, res){
+	roleSecurity(req,res,'admin',function(){
+		testService.blockComlainedDemo(req.body.A).then(function(data){
+				res.send('ok');
+			}).catch(function(err){
+				res.status(400).send(err);
+		})
+  	});
+	
+});
+
+
+router.post('/disblockComplainedDemo',function(req, res){
+	testService.disblockComlainedDemo(req.body.A).then(function(data){
+				res.send('ok');
+			}).catch(function(err){
+				res.status(400).send(err);
+		});
+});
 //------------------------------
 
 module.exports = router;

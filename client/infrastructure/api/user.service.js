@@ -233,16 +233,16 @@
                             })
                     },
                     getBadQuestions: function() {
-                        return httpService.get(host + '/admin/getComplainted')
+                        return httpService.get(host + '/admin/getComplaintedDemo')
                             .then (function(result) {
                                 return result.data;
                             })
                     },
                     sendBadQuestions: function(data) {
-                        return httpService.post(host + '/admin/blockComplained', data);
+                        return httpService.post(host + '/admin/blockComplainedDemo', data);
                     },
                     sendGoodQuestions: function(data) {
-                        return httpService.post(host + '/admin/disblockComplained', data);
+                        return httpService.post(host + '/admin/disblockComplainedDemo', data);
                     }
 
 
