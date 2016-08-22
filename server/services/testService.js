@@ -44,7 +44,7 @@ function getTest(user){
 
 function getTestDemo(user){
 
-	return testDemo.find({bad: false },{'answers': 0},{});
+	return testDemo.find({bad: false },{},{});
 }
 
 
@@ -207,6 +207,7 @@ module.exports.addNewQuestion = addNewQuestion;
 module.exports.addNewQuestionB = addNewQuestionB;
 module.exports.removeCollection = removeCollection;
 module.exports.getTest= getTest;
+module.exports.getTestDemo= getTestDemo;
 module.exports.removeCollectionB = removeCollectionB;
 module.exports.removeCollectionDemo = removeCollectionDemo;
 module.exports.getSecondTest = getSecondTest;

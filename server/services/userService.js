@@ -196,7 +196,21 @@ function getFinishedList(flag,options,reg){
     });
     return defer.promise;
 }
+//----------------------------------------
+function submitDemo(data, id){
+    var defer = q.defer();
 
+    stackService.checkFirstPartDemo(data, id).then(function(level){   
+        
+            defer.resolve();
+    }).catch(function(err){
+        defer.reject(err);
+    })
+    return defer.promise;
+}
+
+
+//------------------------------
 
 
 function submit1(data, id){
@@ -485,6 +499,7 @@ module.exports.getUserStatus = getUserStatus;
 module.exports.find = find;
 module.exports.getFinishedList = getFinishedList;
 module.exports.submit1 = submit1;
+module.exports.submitDemo = submitDemo;
 module.exports.submit2 = submit2;
 module.exports.update = update;
 module.exports.updateStatus = updateStatus;

@@ -2,10 +2,11 @@
     <div class="row">
         <div class="welcome-all col-xs-12 col-sm-12 col-md-offset-1 col-md-11 col-lg-offset-1 col-lg-11">
             <div class="welcome-name">
-                Hello, {{firstName}} {{lastName}}
+                Здравствуйте, {{firstName}} {{lastName}}
             </div>
             <div class="welcome">
-                Welcome to English Tester
+                <!--Welcome to English Tester-->
+                Приветсвуем в системе тесирования
             </div>
         </div>
     </div>
@@ -16,16 +17,16 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
                 <div ng-if="!disStart" class="info-about-button">
-                    Great! You can start to pass the test.<br> From: <span class="date-color-user">{{dateStart}}</span><br>To: <span class="date-color-user">{{dateEnd}}<br></span>
-                    You have 2 hours for this.
+                    Вы можете начать прохождение теста.<br> С: <span class="date-color-user">{{dateStart}}</span><br>По: <span class="date-color-user">{{dateEnd}}<br></span>
+                    У вас 2 час на это.
                 </div>
                 <div ng-if="disStart" class="info-about-button">
-                	Sorry! You can't start to pass the test now, because you have not assigned yet
+                	К сожалению вы не можете начат прохождени теса, так как он вам не назначен. 
                 </div>
             </div>
             <div class="row" ng-if="openNow">
                 <div class="col-xs-offset-10 col-xs-2 col-sm-offset-11 col-sm-1">
-                    <button class="btn-user btn-start" ng-click="onStartTest()" ui-sref="passTest">Start</button>
+                    <button class="btn-user btn-start" ng-click="onStartTest()" ui-sref="passTest">Начать</button>
                 </div>
             </div>
         </div>
@@ -37,15 +38,15 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
                 <div ng-if="!disReq" class="info-about-button">
-                    You can to send request for passing the test. <br>Notification of the designated test will come on email later.
+                    Вы можете отправитьзапро на прохождение теста. <br>Как тольк тес будет назначен вам на почту придёт уведомление.
                 </div>
                 <div ng-if="disReq" class="info-about-button">
-                    You can't to send request for passing the test, because you sent it before or you have open test.
+                    Вы не можете отправить запро на прохождени теса,так как вы уже его отправили или у вас уже есть открытый тест.
                 </div>
             </div>
             <div class="row" ng-if="!disReq">
                 <div class="col-xs-offset-10 col-xs-2 col-sm-offset-11 col-sm-1">
-                    <button class="btn-user btn-start" ng-click="onSendRequest()">Send</button>
+                    <button class="btn-user btn-start" ng-click="onSendRequest()">Отправить</button>
                 </div>
             </div>
         </div>

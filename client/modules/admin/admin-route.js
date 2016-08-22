@@ -19,6 +19,11 @@
                 templateUrl: 'modules/admin/newUser/newUser.html',
                 controller: 'newUserController',
                 role:['admin']
+            }).state('reports', {
+                url: '/admin/reports',
+                templateUrl: 'modules/admin/reports/report.html',
+                controller: 'reportController',
+                role:['admin']
             })
     }])
 }());

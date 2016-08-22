@@ -2,8 +2,7 @@
   "name": "english-tester",
   "description": "",
   "main": "client\\app.js",
-  "authors": [
-  ],
+  "authors": [],
   "license": "MIT",
   "keywords": [
     "angularJS",
@@ -31,6 +30,7 @@
     "angular-ui-bootstrap": "^2.0.0",
     "d3.chart": "*",
     "bootstrap-validator": "^0.11.5",
-    "d3.chart.pie": "*"
+    "d3.chart.pie": "*",
+    "angular-smart-table": "^2.1.8"
   }
 }

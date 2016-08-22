@@ -111,6 +111,16 @@
                                 }
                             )
                     },
+
+                    getTestDemo: function () {
+                        return httpService.get(host + '/user/getTestDemo')
+                            .then(
+                                function(result) {
+                                    return result.data;
+                                }
+                            )
+                    },
+
                     checkTest: function(data) {
                         return httpService.post(host+'/teacher/checkTest', data);
                     },
@@ -138,6 +148,21 @@
                                 return result.data;
                             })
                     },
+
+                    sendFirstPartDemo: function(data) {
+                        return httpService.post(host+'/user/submitDemo', data)
+                            .then ( function(result) {
+                                return result.data;
+                            })
+                    },
+
+                    getReport: function() {
+                        return httpService.get(host+'/admin/getReportDemo')
+                            .then ( function(result) {
+                                return result.data;
+                            })
+                    },
+
                     sendSecondPart: function(data) {
                         return httpService.post(host+'/user/submit2', data)
                             .then ( function(result) {
@@ -179,6 +204,7 @@
                             })
 
                     },
+
 
                     editProfile: function(data) {
                         return httpService.post(host + '/editNumber', {number: data});

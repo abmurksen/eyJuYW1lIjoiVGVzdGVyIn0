@@ -19,6 +19,10 @@
                         {
                             name: 'Создать пользователя',
                             state: 'newUser'
+                        },
+                        {
+                            name: 'Отчёты',
+                            state: 'reports'
                         }
                     ]
                 },

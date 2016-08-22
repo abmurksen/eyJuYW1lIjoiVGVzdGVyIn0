@@ -109,22 +109,22 @@
 
         $scope.levels = [
             {
-                name: 'Begginer',
+                name: 'плохо',
             },
             {
-                name: 'Pre-Intermediate',
+                name: 'неплохо',
             },
             {
-                name: 'Intermediate',
+                name: 'средне',
             },
             {
-                name: 'Upper-Intermediate',
+                name: 'выше среднего',
             },
             {
-                name: 'Advance',
+                name: 'Превосходно',
             },
             {
-                name: 'Date: ',
+                name: 'Дата: ',
             },
         ]
     }]);

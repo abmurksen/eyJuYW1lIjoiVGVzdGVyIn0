@@ -200,7 +200,7 @@
 
 		$scope.initVars();
 
-		userService.getTest().then( function(result) {
+		userService.getTestDemo().then( function(result) {
 			$scope.initAll(result);
 	 	});
 
@@ -299,12 +299,19 @@
 
   		$scope.sendFirstPart = function(currentPage) {
     		$scope.savePrevPage(currentPage);
-  			userService.sendFirstPart($scope.userAnswers)
+  			userService.sendFirstPartDemo($scope.userAnswers)
   				.then ( function(data) {
-  					notification.success("You have successfully completed the first part of the test.");
-  					$scope.whichPart = 2;
-  					$scope.initVars();
-  					$scope.initAll(data);
+  					// notification.success("You have successfully completed the first part of the test.");
+
+					$state.go('home');
+
+					notification.success("Поздравляем вы успешно завершили прохождени теста.");
+
+
+
+  					// $scope.whichPart = 2;
+  					// $scope.initVars();
+  					// $scope.initAll(data);
   				});
   		};
   		$scope.sendSecondPart = function(currentPage,which) {

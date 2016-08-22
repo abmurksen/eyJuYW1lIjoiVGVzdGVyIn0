@@ -1,0 +1,20 @@
+<table st-table="rowCollection" class="table table-striped">
+	<thead>
+	<tr>
+		<th>Имя</th>
+		<th>Баллы</th>
+		<th>статус</th>
+        <th>дата</th>
+		<th>email</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="row in rowCollection">
+		<td>{{row.firstName}} {{row.lastName}}</td>
+		<td>{{row.mark}}</td>
+		<td>{{row.status}}</td>
+        <td>{{row.date}}</td>
+		<td>{{row.email}}</td>
+	</tr>
+	</tbody>
+</table>

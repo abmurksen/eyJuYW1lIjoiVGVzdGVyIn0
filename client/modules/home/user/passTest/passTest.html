@@ -38,8 +38,8 @@
 					<span ng-if="dirty[$index] && !validAnswers[$index]"><button ng-click="setNumPage($index + 1)" class="btn-missing">{{$index + 1}}</button></span>
 				</span>
 			</div>
-			<button class="btn-user btn-submit" ng-if="whichPart === 1" ng-disabled="!allValidAnswers()" ng-click="sendFirstPart(currentPage)">Submit</button>
-			<button class="btn-user btn-submit" ng-if="whichPart === 2" ng-disabled="!allValidAnswers()" ng-click="sendSecondPart(currentPage, true)">Submit</button>
+			<button class="btn-user btn-submit" ng-if="whichPart === 1" ng-disabled="!allValidAnswers()" ng-click="sendFirstPart(currentPage)">Завешить</button>
+			<!--<button class="btn-user btn-submit" ng-if="whichPart === 2" ng-disabled="!allValidAnswers()" ng-click="sendSecondPart(currentPage, true)">Submit</button>-->
 		</div>
 	</div>
 </div>

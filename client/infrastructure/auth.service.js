@@ -11,7 +11,7 @@
                             localContext.token = result.data.token;
                             localContext.refreshToken = result.data.refreshToken;
                             localContext.expiredTime = result.data.expiredTime;
-                            console.log(new Date(result.data.expiredTime));
+                            // console.log(new Date(result.data.expiredTime));
                             localStorage.setItem('context', JSON.stringify(localContext));
                         });
                 }

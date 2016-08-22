@@ -193,6 +193,98 @@ function checkFirstPart(data, id){
 
 }
 
+//----------------------------------------------
+function checkFirstPartDemo(data, id){
+	var pr = q.defer();
+	var len = data.length;
+	var right = 0;
+	var marks = [];
+	for (var i =0; i < 5 ;i++){
+		marks.push(0);
+	}
+	stack.findOne({userId: id}).then(function(stackRecord){
+			data.forEach(function(element) {
+				if(element.badForUser){
+					testA.update({_id:element.qId},{ $set: { complaint: true }},{});
+				}
+				stackRecord.answersAuto.forEach(function(element1) {
+					if(element.qId == element1._qId){
+						var f = true
+						element.answer.forEach(function(element, i, arr) {
+							if(element!= element1.answer[i]){
+								f = false;
+							}
+						});
+						if(f){
+							right++;
+							// marks[element1.level-1]+=0.2*element1.level;
+						}
+					}
+				});
+			});
+			var rez = right/len;
+			
+			// marks.forEach(function(element) {
+			// 	rez+=element;
+			// });
+			
+			// rez/=9;
+			var aMark = rez;
+			aMark *=100;
+			rez = Math.floor(rez*5)+1;
+			if(rez == 6) {
+				rez = 5;
+			}
+			stack.update({_id:stackRecord._id},{ $set: { level: rez, autoMark: aMark }},{}).then(function(){
+				
+
+			var resultRecord = {};
+			var data = stackRecord;
+			resultRecord.userId = data.userId,
+			resultRecord.firstName = data.firstName,
+			resultRecord.lastName = data.lastName,
+			resultRecord.email = data.email,
+
+			resultRecord.result = {};
+
+			resultRecord.result.autoMark = right;
+			resultRecord.result.teacherMark = len;
+			resultRecord.result.level = rez;
+			var total = data.autoMark * 0.3 + rez*0.7;
+			resultRecord.result.totalMark = Math.round(aMark);
+			//((data.level - 1)*20) + (rez*0.2);
+			// resultRecord.teacherId = data.teacherId;
+			// resultRecord.teacherFirstName = data.teacherFirstName;
+			// resultRecord.teacherLastName = data.teacherLastName;
+			// resultRecord.teacherEmail = data.teacherEmail;
+
+			addResults(resultRecord).then(function(data){
+				removeStackCollection({_id: stackRecord._id}).then(function(data){
+					service.updateStatus(resultRecord.userId,'free');
+					pr.resolve();
+				}).catch(function(err){
+					pr.reject(err);
+				})
+			}).catch(function(err){
+				pr.reject(err);
+			})
+
+
+
+
+				pr.resolve(rez);
+			}).catch(function(err){
+				pr.reject(err);
+			});
+	}).catch(function(err){
+		pr.reject(err);
+	});
+
+	return pr.promise;
+
+}
+//----------------------------------------------
+
 function sendTest(sId, tId){
 	return stack.findOne({_id : sId, teacherId : tid},{},{});
 }
@@ -233,6 +325,7 @@ module.exports.resultsCount = resultsCount;
 module.exports.openTestsCount = openTestsCount;
 module.exports.requestCount = requestCount;
 module.exports.checkFirstPart = checkFirstPart;
+module.exports.checkFirstPartDemo = checkFirstPartDemo;
 module.exports.sendTest = sendTest;
 module.exports.stackCountAsync = stackCountAsync;
 module.exports.resultCountAsync = resultCountAsync;

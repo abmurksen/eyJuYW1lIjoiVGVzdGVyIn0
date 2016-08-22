@@ -233,6 +233,17 @@ router.post('/disblockComplained',function(req, res){
 		});
 });
 
+//------------------------------
 
+router.get('/getReportDemo',function(req, res){
+	stackService.findResults({}, { 'userId': 0, '_id': 0, 'teacherId': 0 }, {}).then(function (data) {
+		res.send(data);
+	}).catch(function (err) {
+		res.status(400).send(err);
+	});
+});
+
+
+//------------------------------
 
 module.exports = router;

@@ -60,7 +60,7 @@ router.get('/getTest',  passport.authenticate('jwt', { session: false }),functio
 		
 });
 
-//--------------for demonstration (one demonstratio test)
+//--------------for demonstration (one demonstration test)
 
 
 router.get('/getTestDemo',  passport.authenticate('jwt', { session: false }),function(req, res){
@@ -68,12 +68,36 @@ router.get('/getTestDemo',  passport.authenticate('jwt', { session: false }),fun
        		stackService.findOpenTests({userId: req.user._id},{},{}).then(function (data){
 			if(data[0] !== undefined){
 				testService.getTestDemo().then(function(data){
-					res.send(data);
-					stackService.removeOpenTestsCollection({userId: req.user._id}).then(function(data){
-						service.updateStatus(req.user._id, 'stack');
-					}).catch(function(err){
-						res.status(401).send(err);
-					})
+
+					var user = {};
+
+					user.userId = req.user._id;
+					user.firstName = req.user.firstName;
+					user.lastName = req.user.lastName;
+					user.email = req.user.email;
+					user.answersAuto = [];
+
+					data.forEach(function(element) {
+						var tarr = [];
+						tarr.push(element.answers[0]);
+                        user.answersAuto.push({_qId:element.id, answer: tarr});						
+                    });
+					// res.send(data);
+
+
+
+					stackService.addStacks(user).then(function(){
+                        stackService.removeOpenTestsCollection({userId: req.user._id}).then(function(){
+							// потом переделать чере промисы
+							service.updateStatus(req.user._id, 'stack');
+							res.send(data);
+						}).catch(function(err){
+							res.status(401).send(err);
+						});
+                    }).catch(function(err){
+                        defer.reject(err);
+                    });
+
 				}).catch(function(err){
 					res.status(401).send(err);
 				});
@@ -90,7 +114,13 @@ router.get('/getTestDemo',  passport.authenticate('jwt', { session: false }),fun
 		
 });
 
-
+router.post('/submitDemo', contracts.submit1, passport.authenticate('jwt', { session: false }), function(req,res){
+	service.submitDemo(req.body, req.user._id).then(function(data){
+		res.json(data);
+	}).catch(function(err){
+		res.status(400).send(err);
+	});
+});
 
 
 //----------------------------
