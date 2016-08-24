@@ -2,7 +2,7 @@
 	<div class="row-fluid">
 		<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
             <div><img class="img-new-user" src="assets/images/icons/chooseType.png"></div>
-			<h3 class="h3-block">Choose type of question </h3>
+			<h3 class="h3-block">Выберете тип вопроса </h3>
             <select class="form-control input-admin input-option" ng-model="selectedQue" ng-change="changeQue(selectedQue)">
                 <option ng-repeat="que in typeOfQuestion" ng-value="que.type">{{que.text}}</option>
             </select>
@@ -13,10 +13,10 @@
 			<div ng-if="selectedQue === typeOfQuestion[0].type">
 				<form name="main"> 
 					<div>
-						<p class="ads">Text of question</p>
+						<p class="ads">Текст вопроса</p>
 						<textarea class="textarea-admin" id="qtextarea" placeholder="Write here.." ng-model="finalQue.question" required></textarea>
 					</div>
-					<p class="ads">Add answer options</p>
+					<p class="ads">Добавить вариант ответа</p>
 					<a class="icon plus-option" ng-click="addAnswerItem()"></a>
           <a class="icon remove-option" ng-click="removeAnswerItem()"></a>
           <div ng-repeat="smth in finalQue.options track by $index">
@@ -26,95 +26,95 @@
               </label>
       			<input type="text" class="input-admin input-option" ng-model="finalQue.options[$index]" placeholder="Write option here" required>
       		</div>
-          <p class="ads">Level of question</p>
+          <p class="ads">уровень вопроса</p>
           <input type="text" class="input-admin input-option" ng-model="finalQue.level" ng-pattern="'[1-5]{1}'" placeholder="From 1 to 5" required>
-      		<button class="btn-admin btn-submit-que"  ng-disabled="main.$invalid|| finalQue.answers[0] === -1" ng-click="sendQue()">Submit</button>
+      		<button class="btn-admin btn-submit-que"  ng-disabled="main.$invalid|| finalQue.answers[0] === -1" ng-click="sendQue()">Добавить</button>
       	</form>
     	</div>
 
-    		<div ng-if="selectedQue === typeOfQuestion[1].type">
-				  <form name="main"> 
-  					<div>
-  						<p class="ads">Text of question</p>
-  						<textarea class="textarea-admin" placeholder="Write here.." ng-model="finalQue.question" required></textarea>
-  					</div>
-  					<p class="ads">Add answer options</p>
-  					<a class="icon plus-option" ng-click="addAnswerItem()"></a>
-            <a class="icon remove-option" ng-click="removeAnswerItem()"></a>
-            <div ng-repeat="smth in finalQue.options track by $index">
-        			<input id="{{$index}}" type="checkbox" name="answer" ng-value="$index" ng-model="finalQue.answers[$index]">
-                <label for="{{$index}}" class=" icon-block main-label">
-                  <div class="icon checkbox-icon"></div>
-                </label>
-      				<input type="text" class="input-admin input-option" ng-model="finalQue.options[$index]" placeholder="Write option here" required> 
-        		</div>
-            <p class="ads">Level of question</p>
-            <input type="text" class="input-admin input-option" ng-model="finalQue.level" ng-pattern="'[1-5]{1}'" placeholder="From 1 to 5"  required>
-        		<button class="btn-admin btn-submit-que" ng-disabled="main.$invalid || !someCheckbox()" ng-click="sendQue()">Submit</button>
-          </form>
-    		</div>
-
-    		<div ng-if="selectedQue === typeOfQuestion[2].type">
-  				<form name="main"> 
-  					<div>
-  						<p class="ads">Text of question</p>
-  						<textarea class="textarea-admin" placeholder="Write here.." ng-model="finalQue.question" required></textarea>
-  					</div>
-            <p class="ads">Level of question</p>
-            <input type="text" class="input-admin input-option" ng-model="finalQue.level" ng-pattern="'[1-5]{1}'" placeholder="From 1 to 5"  required>
-        		<button class="btn-admin btn-submit-que" ng-disabled="main.$invalid" ng-click="sendQue()">Submit</button>
-        	</form>
-    		</div>
-
-    		<div ng-if="selectedQue === typeOfQuestion[3].type">
-  				<form name="main"> 
-  					<div>
-  						<p class="ads">Topic for essay</p>
-  						<textarea class="textarea-admin" class="sm-textarea" ng-model="finalQue.question" placeholder="Write here.." required></textarea>
-  					</div>
-            <p class="ads">Level of question</p>
-            <input type="text" class="input-admin input-option" ng-model="finalQue.level" ng-pattern="'[1-5]{1}'" placeholder="From 1 to 5"  required>
-        		<button class="btn-admin btn-submit-que" ng-disabled="main.$invalid" ng-click="sendQue()">Submit</button>
-        	</form>
-    		</div>
-
-        <div ng-if="selectedQue === typeOfQuestion[4].type">
-
-          <form name="upload" ng-submit="submit()"  class="form-file">
-            <label for="btn-file" class="input-btn btn-admin">Choose file</label>
-            <input type="file" fileread="vm.uploadme" id="btn-file" accept="audio/*">
-            <input type="submit" value="Upload" class="input-btn btn-admin" ng-click="finishUp()">
-            <div id="log">Process of upload</div>
-          </form>
-         <sound-manager>
-            <button music-player="play" add-song="song" class="btn-admin btn-music btn-music-play" ng-click="startPlay()" ng-if="!isPlayingMy && song.url"></button>
-            <button play-music class="btn-admin btn-music btn-music-play" ng-if="isPlayingMy && song.url"></button>          
-            <button pause-music class="btn-admin btn-music btn-music-pause" ng-if="song.url"></button>
-            <button stop-music class="btn-admin btn-music btn-music-stop" ng-if="song.url"></button>
-            <div class="seekBase seekBase-user" ng-if="song.url" seek-track>
-                  <div class="seekLoad seekLoad-admin" ng-style="{width : ( progress + '%' ) }"></div>
-                </div>
-          </sound-manager>
-
-          <form name="main">
-            <div>
-            </div>
-            <p class="ads">Level of question</p>
-            <input type="text" class="input-admin input-option" ng-model="finalQue.level" ng-pattern="'[1-5]{1}'" placeholder="From 1 to 5"  required>
-            <button class="btn-admin btn-submit-que" ng-disabled="main.$invalid || finalQue.question === ''" ng-click="sendQue()">Submit</button>
-          </form>
-        </div>
-
-        <div ng-if="selectedQue === typeOfQuestion[5].type">
-
-        <form name="upload" ng-submit="submit()" class="form-file">
-          <label for="btn-file" class="input-btn btn-admin">Choose file</label>
-          <input type="file" fileread="vm.uploadme" id="btn-file" accept="audio/*">
-          <input type="submit" value="Upload" class="input-btn btn-admin" ng-click="finishUp()">
-          <div id="log">Process of upload</div>
+  		<div ng-if="selectedQue === typeOfQuestion[1].type">
+			  <form name="main"> 
+					<div>
+						<p class="ads">Текст вопроса</p>
+						<textarea class="textarea-admin" placeholder="Write here.." ng-model="finalQue.question" required></textarea>
+					</div>
+					<p class="ads">Добавить вариант ответа</p>
+					<a class="icon plus-option" ng-click="addAnswerItem()"></a>
+          <a class="icon remove-option" ng-click="removeAnswerItem()"></a>
+          <div ng-repeat="smth in finalQue.options track by $index">
+      			<input id="{{$index}}" type="checkbox" name="answer" ng-value="$index" ng-model="finalQue.answers[$index]">
+              <label for="{{$index}}" class=" icon-block main-label">
+                <div class="icon checkbox-icon"></div>
+              </label>
+    				<input type="text" class="input-admin input-option" ng-model="finalQue.options[$index]" placeholder="Write option here" required> 
+      		</div>
+          <p class="ads">уровень вопроса</p>
+          <input type="text" class="input-admin input-option" ng-model="finalQue.level" ng-pattern="'[1-5]{1}'" placeholder="From 1 to 5"  required>
+      		<button class="btn-admin btn-submit-que" ng-disabled="main.$invalid || !someCheckbox()" ng-click="sendQue()">Добавить</button>
         </form>
+  		</div>
 
+  		<div ng-if="selectedQue === typeOfQuestion[2].type">
+				<form name="main"> 
+					<div>
+						<p class="ads">Текст вопроса</p>
+						<textarea class="textarea-admin" placeholder="Write here.." ng-model="finalQue.question" required></textarea>
+					</div>
+          <p class="ads">уровень вопроса</p>
+          <input type="text" class="input-admin input-option" ng-model="finalQue.level" ng-pattern="'[1-5]{1}'" placeholder="From 1 to 5"  required>
+      		<button class="btn-admin btn-submit-que" ng-disabled="main.$invalid" ng-click="sendQue()">Добавить</button>
+      	</form>
+  		</div>
+
+  		<div ng-if="selectedQue === typeOfQuestion[3].type">
+				<form name="main"> 
+					<div>
+						<p class="ads">текст для эссе</p>
+						<textarea class="textarea-admin" class="sm-textarea" ng-model="finalQue.question" placeholder="Write here.." required></textarea>
+					</div>
+          <p class="ads">уровень вопроса</p>
+          <input type="text" class="input-admin input-option" ng-model="finalQue.level" ng-pattern="'[1-5]{1}'" placeholder="From 1 to 5"  required>
+      		<button class="btn-admin btn-submit-que" ng-disabled="main.$invalid" ng-click="sendQue()">Добавить</button>
+      	</form>
+  		</div>
+
+      <div ng-if="selectedQue === typeOfQuestion[4].type">
         <sound-manager>
+          <form name="upload" ng-submit="submit()"  class="form-file">
+            <label clear-playlist for="btn-file" class="input-btn btn-admin">Выберите файл</label>
+            <input type="file" fileread="vm.uploadme" id="btn-file" accept="audio/*">
+            <input type="submit" value="Загрузить" class="input-btn btn-admin" ng-click="finishUp()">
+            <div id="log">Прогресс</div>
+          </form>
+       
+          <button music-player="play" add-song="song" class="btn-admin btn-music btn-music-play" ng-click="startPlay()" ng-if="!isPlayingMy && song.url"></button>
+          <button play-music class="btn-admin btn-music btn-music-play" ng-if="isPlayingMy && song.url "></button>          
+          <button pause-music class="btn-admin btn-music btn-music-pause" ng-if="song.url"></button>
+          <button stop-music class="btn-admin btn-music btn-music-stop" ng-if="song.url"></button>
+          <div class="seekBase seekBase-user" ng-if="song.url" seek-track>
+                <div class="seekLoad seekLoad-admin" ng-style="{width : ( progress + '%' ) }"></div>
+              </div>
+        </sound-manager>
+
+        <form name="main">
+          <div>
+          </div>
+          <p class="ads">уровень вопроса</p>
+          <input type="text" class="input-admin input-option" ng-model="finalQue.level" ng-pattern="'[1-5]{1}'" placeholder="From 1 to 5"  required>
+          <button clear-playlist class="btn-admin btn-submit-que" ng-disabled="main.$invalid || finalQue.question === ''" ng-click="sendQue()">Добавить</button>
+        </form>
+      </div>
+
+      <div ng-if="selectedQue === typeOfQuestion[5].type">
+        <sound-manager>
+          <form name="upload" ng-submit="submit()" class="form-file">
+            <label clear-playlist for="btn-file" class="input-btn btn-admin">Выберите файл</label>
+            <input type="file" fileread="vm.uploadme" id="btn-file" accept="audio/*">
+            <input type="submit" value="Загрузить" class="input-btn btn-admin" ng-click="finishUp()">
+            <div id="log">Прогресс</div>
+          </form>
+
+        
             <button music-player="play" add-song="song" class="btn-admin btn-music btn-music-play" ng-click="startPlay()" ng-if="!isPlayingMy && song.url"></button>
             <button play-music class="btn-admin btn-music btn-music-play" ng-if="isPlayingMy && song.url"></button>          
             <button pause-music class="btn-admin btn-music btn-music-pause" ng-if="song.url"></button>
@@ -122,10 +122,10 @@
             <div class="seekBase seekBase-user" ng-if="song.url" seek-track>
                   <div class="seekLoad seekLoad-admin" ng-style="{width : ( progress + '%' ) }"></div>
                 </div>
-          </sound-manager>
+        </sound-manager>
 
         <form name="main">  
-          <p class="ads">Add answer options</p>
+          <p class="ads">Добавить вариант ответа</p>
           <a class="icon plus-option" ng-click="addAnswerItem()"></a>
           <a class="icon remove-option" ng-click="removeAnswerItem()"></a>
 
@@ -136,23 +136,23 @@
               </label>
             <input type="text" class="input-admin input-option" ng-model="finalQue.options[$index]" placeholder="Write option here" required> 
           </div>
-          <p class="ads">Level of question</p>
+          <p class="ads">уровень вопроса</p>
           <input type="text" class="input-admin input-option" ng-model="finalQue.level" ng-pattern="'[1-5]{1}'" placeholder="From 1 to 5"  required>
-          <button class="btn-admin btn-submit-que" ng-disabled="main.$invalid || finalQue.question === '' || finalQue.answers[0] === -1" ng-click="sendQue()" >Submit</input>
+          <button clear-playlist class="btn-admin btn-submit-que" ng-disabled="main.$invalid || finalQue.question === '' || finalQue.answers[0] === -1" ng-click="sendQue()" >Добавить</input>
 
         </form>
       </div>
 
       <div ng-if="selectedQue === typeOfQuestion[6].type">
-
+        <sound-manager>
         <form name="upload" ng-submit="submit()" class="form-file">
-          <label for="btn-file" class="input-btn btn-admin">Choose file</label>
+          <label clear-playlist for="btn-file" class="input-btn btn-admin">Выберите файл</label>
           <input type="file" fileread="vm.uploadme" id="btn-file" accept="audio/*">
-          <input type="submit" value="Upload" class="input-btn btn-admin" ng-click="finishUp()">
-          <div id="log">Process of upload</div>
+          <input type="submit" value="Загрузить" class="input-btn btn-admin" ng-click="finishUp()">
+          <div id="log">Прогресс</div>
         </form>
 
-        <sound-manager>
+        
             <button music-player="play" add-song="song" class="btn-admin btn-music btn-music-play" ng-click="startPlay()" ng-if="!isPlayingMy && song.url"></button>
             <button play-music class="btn-admin btn-music btn-music-play" ng-if="isPlayingMy && song.url"></button>          
             <button pause-music class="btn-admin btn-music btn-music-pause" ng-if="song.url"></button>
@@ -163,7 +163,7 @@
           </sound-manager>
 
         <form name="main">        
-          <p class="ads">Add answer options</p>
+          <p class="ads">Добавить вариант ответа</p>
           <a class="icon plus-option" ng-click="addAnswerItem()"></a>
           <a class="icon remove-option" ng-click="removeAnswerItem()"></a>
           <div ng-repeat="smth in finalQue.options track by $index">
@@ -173,21 +173,21 @@
               </label>
             <input type="text" class="input-admin input-option" ng-model="finalQue.options[$index]" placeholder="Write option here" required> 
           </div>
-          <p class="ads">Level of question</p>
+          <p class="ads">уровень вопроса</p>
           <input type="text" class="input-admin input-option" ng-model="finalQue.level" ng-pattern="'[1-5]{1}'" placeholder="From 1 to 5"  required>
-          <button class="btn-admin btn-submit-que" ng-disabled="main.$invalid || finalQue.question === '' || !someCheckbox" ng-click="sendQue()">Submit</button>
+          <button clear-playlist class="btn-admin btn-submit-que" ng-disabled="main.$invalid || finalQue.question === '' || !someCheckbox" ng-click="sendQue()">Добавить</button>
         </form>
       </div>
 
       <div ng-if="selectedQue === typeOfQuestion[7].type">
         <form name="main">
           <div>
-            <p class="ads">Topic for speak</p>
+            <p class="ads">тема для разговора</p>
             <textarea class="textarea-admin" class="sm-textarea" ng-model="finalQue.question" placeholder="Write here.."></textarea>
           </div>
-          <p class="ads">Level of question</p>
+          <p class="ads">уровень вопроса</p>
           <input type="text" class="input-admin input-option" ng-model="finalQue.level" ng-pattern="'[1-5]{1}'" placeholder="From 1 to 5"  required>
-          <button class="btn-admin btn-submit-que" ng-disabled="main.$invalid" ng-click="sendQue()">Submit</button>
+          <button class="btn-admin btn-submit-que" ng-disabled="main.$invalid" ng-click="sendQue()">Добавить</button>
         </form>
       </div>
 

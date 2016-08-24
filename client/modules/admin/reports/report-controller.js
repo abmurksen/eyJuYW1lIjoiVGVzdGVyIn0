@@ -17,7 +17,8 @@
                             tobj.lastName = item.lastName;
                             tobj.mark = item.result.autoMark + '('+item.result.totalMark+'%)';
                             tobj.status = item.result.totalMark <= 50 ? 'не пройдено': 'пройдено';
-                            tobj.date = new Date(item.date);
+                            var date = new Date(item.date);                            
+                            tobj.date = date.toDateString();
                             tobj.email = item.email;
 
 

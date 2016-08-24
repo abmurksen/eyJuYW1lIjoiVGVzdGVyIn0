@@ -10,6 +10,7 @@
 			};
 			$scope.qqq;
 
+
 			$scope.typeOfQuestion = [ 
 			{
 				text: 'One of many',
@@ -134,14 +135,17 @@
 				$scope.selectedQue = '';
 				notification.success("You have successfully added new question");
 			};
-
+			$scope.isPlayingMy = false;
 			$scope.finishUp = function() {
+				$scope.isPlayingMy = false;
+				// clearPlaylist();
 				/*$timeout( function() {
 					$scope.finalQue.question = $scope.qqq;
 					$scope.song.url = $scope.qqq;
 				}, 1000);*/
 			}
-			$scope.isPlayingMy = false;
+			
+
 			$scope.startPlay = function() {
 				$scope.isPlayingMy = true;
 			}
