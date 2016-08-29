@@ -5,7 +5,8 @@
 	"expires" : 7200,
 	"host" : "http://localhost:3000/",
 	"typesOfSecondPart" : [
-		"essay"
+		"essay",
+		"speaking"
 	],
 	"mail": false
 }

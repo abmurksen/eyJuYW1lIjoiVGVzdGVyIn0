@@ -82,7 +82,7 @@
 				if ($scope.selectedQue === 'listeningWithManyOfMany' || $scope.selectedQue === 'manyOfMany') {
 					$scope.finalQue.answers.push(false);
 				}
-				$scope.finalQue.question = $scope.qqq;
+				// $scope.finalQue.question = $scope.qqq;
 			};
 
 			$scope.someCheckbox = function() {
