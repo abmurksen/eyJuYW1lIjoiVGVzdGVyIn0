@@ -1,0 +1,18 @@
+.centrgroup {
+    margin-left: 35px;    
+}
+.margbott {
+    margin-bottom: 15px
+}
+.hightList {
+    height: 250px !important;
+}
+.toSelect {
+    height: 240px !important;
+}
+.selected {
+    height: 130px !important;
+}
+.btnDel {
+    margin-top: 45px;
+}

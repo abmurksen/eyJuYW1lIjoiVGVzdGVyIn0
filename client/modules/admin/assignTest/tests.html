@@ -1,0 +1,131 @@
+<div class="formWrapper col-sm-12 col-md-12 col-lg-12">
+    <div class="formSelect col-sm-12 col-md-12 col-lg-12" ng-controller="assignTest">
+       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+
+            <!--ng-show="showList.length > 0" -->
+
+            <div class="form-group">
+                <!--img src="assets/images/icons/list.png"-->
+                <h3>Доступные тесты</h3>
+
+                <!--ng-options="user for user in showList"-->
+                <select ng-model="testsToselectList" class="select-list toSelect" id="sel4" multiple="multiple"  ng-change="clickOnTestToSelect(testsToselectList)" ng-selected="selected">
+                    <option ng-repeat="option in data.availableTests" ng-value="option.value">{{option.name}} </option>
+   
+                </select>
+
+                <div class="div-btn-group">
+                    <button class="btn-admin  col-xs-12 col-sm-12   col-md-12   col-lg-12 margbott" type="submit"  ng-click="selectTest()" ng-disabled="disabledAdd">Добавить</button>
+                </div>
+
+                <select ng-model="testsListToDel" class="select-list selected" id="sel4" multiple="multiple"  ng-change="clickToDel(testsListToDel)" ng-selected="selected">
+                    <option ng-repeat="option in data.selectedTests" ng-value="option._id">{{option.name}} </option>
+   
+                </select>
+
+
+                <!--<div class="div-btn-group">
+                    <button class="btn-admin reset" type="submit"  ng-click="reset()" ng-disabled="disabled">Удалить всё</button>
+                    <button class="btn-admin reset" type="submit"  ng-click="deletePerson()" ng-disabled="disabled2">Удалить</button>
+                </div>-->
+                <!--<div class="div-btn-group">
+                    <button class="btn-admin btn-submit" type="submit" ng-click="submitStudentsList()" ng-disabled="disabled">Назначить</button>
+                </div>-->
+            </div>
+        </div>
+ <!--col-md-offset-1  col-lg-offset-1 -->
+        <div class="step1 col-xs-12 col-sm-4   col-md-4   col-lg-4">
+            <form data-toggle="validator" role="form">
+            <div class="form-group sel2">
+                <h3>Назначить тест</h3>
+                <br>
+                <!--<input type="radio" id="req" name="browser" value="request" ng-model="checkRequest" ng-click="checkUsersList(checkRequest)" ng-checked="checked">
+                <label for="req">
+                    <div class="icon radio-icon">
+                    </div>Запросившие тест
+                </label>
+                
+                <input type="radio" id="free" name="browser" value="free" ng-model="checkFree" ng-click="checkUsersList(checkFree)">
+                <label for="free">
+                    <div class="icon radio-icon">
+                    </div>Свободные
+                </label>-->
+
+                <!--<ol class="nya-bs-select" size="7" title="Выбрать пользователя" ng-model="selectedItem4" data-live-search="true" ng-change="hasChanged(selectedItem4)">
+                    <li nya-bs-option="freeStudent in freeStudents" ng-model="test">
+                        <a class="noDisableUser" ng-model="test2">
+                            {{ freeStudent.fullName }}
+                            <span class="glyphicon glyphicon-ok check-mark"></span>
+                        </a>
+                    </li>
+                </ol>-->
+
+
+
+                <!--ng-show="currentStudent !== null"-->
+        <div >
+
+                <input class="col-xs-6 col-sm-6 col-md-6 col-lg-6" type="text" size="40" ng-model="freeStdName" placeholder="User's name" disabled>
+                <input class="col-xs-6 col-sm-6 col-md-6 col-lg-6" type="text" size="40" ng-model="freeStdMail" placeholder="User's mail" disabled>
+                <input class="col-xs-6 col-sm-6 col-md-6 col-lg-6" type="text" size="40" ng-model="freeStdTel" placeholder="User's telephone" disabled>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 cal1">
+                    <p class="input-group">
+                        <input type="text" class="form-control" ng-model="dt3" uib-datepicker-popup is-open="popup1.opened" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default dateIcon" ng-click="open1()"><img src="assets/images/icons/date.png"></button>
+                            </span>
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 time">
+
+                    <div uib-timepicker ng-model="mytime3" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 cal1 secondDate">
+                    <p class="input-group">
+                        <input type="text" class="form-control" ng-model="dt4" uib-datepicker-popup is-open="popup2.opened"  min-date="minDate2" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default dateIcon" ng-click="open2()"><img src="assets/images/icons/date.png"></button>
+                            </span>
+                    </p>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 time">
+                    <div uib-timepicker ng-model="mytime4" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+                </div>
+
+
+                <button class="btn-admin btnDel" type="submit" ng-click="deleteFromSelected()" ng-disabled="disabledDel">Удалить</button>
+        </div>
+            </div>
+            </form>
+        </div>
+
+        <div class="step2 col-xs-12 col-sm-4 col-md-4 col-lg-4">
+
+            <!--ng-show="showList.length > 0" -->
+
+             <!--sel4-->
+            <div class="form-group">
+                <!--img src="assets/images/icons/list.png"-->
+                <h3>Выбранные пользователи</h3>
+
+                <!--ng-options="user for user in showList"-->
+                <select ng-model="studentList" class="select-list hightList" id="sel4" multiple="multiple"  ng-change="clickOnName(studentList)" ng-selected="selected">
+                    <option ng-repeat="option in data.availableOptions" ng-value="option.user">{{option.fullName}} </option>
+   
+                </select>
+                <div class="div-btn-group">
+                    <!--<button class="btn-admin reset col-xs-12 col-sm-5   col-md-5   col-lg-5 margbott" type="submit"  ng-click="reset()" ng-disabled="disabled">Удалить всё</button>-->
+                    <button class="btn-admin  col-xs-12 col-sm-12   col-md-12   col-lg-12 margbott" type="submit"  ng-click="deletePerson()" ng-disabled="disabled2">Удалить</button>
+                </div>
+                <div class="div-btn-group">
+                    <button class="btn-admin btn-submit" type="submit" ng-click="submitStudentsList()" ng-disabled="!data.availableOptions.length || !data.selectedTests.length">Назначить</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

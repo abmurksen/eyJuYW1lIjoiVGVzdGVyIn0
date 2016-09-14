@@ -1,0 +1,16 @@
+.st-selected{
+    background: #87CEEB;
+    background-color: #87CEEB !important;
+}
+
+  .st-sort-ascent:before{
+    content: '\25B2';
+  }
+
+  .st-sort-descent:before{
+    content: '\25BC';
+  }
+/*.forBorder{
+  border: 1px solid black;
+    /*border-radius: 8px
+}*/
