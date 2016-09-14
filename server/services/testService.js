@@ -1,4 +1,5 @@
 var testA = require('../db/mongo').testA;
+var tests = require('../db/mongo').tests;
 var testDemo = require('../db/mongo').testDemo;
 var testB = require('../db/mongo').testB;
 var testMaker = require('../logic/testMaker');
@@ -22,6 +23,13 @@ function getQFromLevel(_level,rand){
 function addNewQuestion(info){
 	return testA.save(info);	
 }
+
+
+function addTests(info){
+	return tests.create(info);
+}
+
+
 function addNewQuestionB(info){
 	return testB.save(info);	
 }
@@ -29,9 +37,18 @@ function removeCollection(query){
 	return testA.remove(query);
 }
 
+
+
+function removeColectionTests(query){
+ 	return tests.remove(query);
+}
 function removeCollectionDemo(query){
 	return testDemo.remove(query);
 }
+
+
+
+
 
 function removeCollectionB(query){
 	return testB.remove(query);
@@ -41,6 +58,11 @@ function getTest(user){
 }
 
 //-----------------
+
+function getTestsList(query){
+	return tests.find(query);
+}
+
 
 function getTestDemo(user){
 
@@ -249,4 +271,6 @@ module.exports.blockComlained = blockComplained;
 module.exports.disblockComlained = disblockComplained;
 module.exports.blockComlainedDemo = blockComplainedDemo;
 module.exports.disblockComlainedDemo = disblockComplainedDemo;
-
+module.exports.removeColectionTests = removeColectionTests;
+module.exports.addTests = addTests;
+module.exports.getTestsList = getTestsList;

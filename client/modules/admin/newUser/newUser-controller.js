@@ -4,14 +4,55 @@
         .controller('newUserController', ['$scope', 'userService', 'notification',
             function ($scope, userService, notification) {
 
+                $scope.sexList = [
+                    { 'name': 'мужской' },
+                    { 'name': 'женский' },
+                ];
+
+                $scope.statusList = [
+                    { 'name': 'Администратор'},
+                    { 'name': 'Преподователь'},
+                    { 'name': 'Сотрудник'},
+                    { 'name': 'Кандидат'}
+                ];
+
+
+
                 $scope.phnumberMd = '+375';
-                $scope.dt = new Date();
-                $scope.dt2 = new Date();
+                // $scope.dt = new Date();
+                // $scope.dt2 = new Date();
 
                 $scope.newUser = function () {
-                    var dateStart = $scope.mytime.getHours()*1000*60*60 + $scope.mytime.getMinutes()*1000*60 + $scope.dt.valueOf();
-                    var dateEnd = $scope.mytime2.getHours()*1000*60*60 + $scope.mytime2.getMinutes()*1000*60 + $scope.dt2.valueOf();
-                    userService.newUser($scope.firstMd, $scope.secondMd, $scope.emailMd, $scope.phnumberMd, dateStart, dateEnd);
+                    var user = {};
+                    user.firstName = $scope.firstMd;
+                    user.lastName = $scope.secondMd;
+                    user.email = $scope.emailMd;
+                    user.password = 11111;
+                    if($scope.bDate){
+                        var arr = $scope.bDate.split('.');
+                        user.birthDate = new Date(arr[2], arr[1]-1, arr[0]).getTime() ;
+                    }
+                    
+
+                                        
+                    user.sex = $scope.sex;
+                    user.role = $scope.status;
+                    user.status = "free";
+                    user.number = $scope.phnumberMd;
+                    var re = /\s*,\s*/;
+                    if($scope.group){
+                        user.group = [];
+                        var arr1 = $scope.group.split(re);
+                        arr1.forEach(function(item){
+                            user.group.push({name: item});
+                        })
+                        // user.group = arr1;
+                    }
+                    
+                    // var dateStart = $scope.mytime.getHours()*1000*60*60 + $scope.mytime.getMinutes()*1000*60 + $scope.dt.valueOf();
+                    // var dateEnd = $scope.mytime2.getHours()*1000*60*60 + $scope.mytime2.getMinutes()*1000*60 + $scope.dt2.valueOf();
+                    // userService.newUser($scope.firstMd, $scope.secondMd, $scope.emailMd, $scope.phnumberMd, dateStart, dateEnd);
+                    userService.createUser(user);
                     $scope.dt = null;
                     $scope.dt2 = null;
                     $scope.mytime = null;
@@ -19,8 +60,13 @@
                     $scope.firstMd = null;
                     $scope.secondMd = null;
                     $scope.emailMd = null;
-                    $scope.phnumberMd = null;
-                    notification.success("You have successfully added a new user");
+                    $scope.phnumberMd = '+375';
+
+                    // $scope.sex = null;
+                    $scope.bDate = null;
+                    // $scope.status = null;
+                    $scope.group = null;
+                    notification.success("новый пользователь успешно создан");
                 };
 
                 $scope.inlineOptions = {
@@ -115,5 +161,55 @@
                     $scope.mytime2 = d;
                 };
 
-            }]);
+            }]).directive('dropdownList', function ($timeout) {
+                return {
+                    restrict: 'E',
+                    scope: {
+                        itemsList: '=',
+                        datafield: '=',
+                        placeholder: '@'
+                    },
+                    template: '<input type="text" class="form-control input-admin" ng-model="search" placeholder="{{ placeholder }}" />' +
+                    '<div class="search-item-list"><ul class="list">' +
+                    '<li ng-repeat="item in itemsList | filter:search" ng-click="chooseItem( item )">{{ item.name }}' +
+                    // '<span class="amount">{{ item.amount }}</span>' +
+                    '</li>' +
+                    '</ul></div>',
+                    link: function (scope, el, attr) {
+                        var $listContainer = angular.element(el[0].querySelectorAll('.search-item-list')[0]);
+                        el.find('input').bind('focus', function () {
+                            $listContainer.addClass('show');
+                        });
+                        el.find('input').bind('blur', function () {
+                            /*
+                               * 'blur' реагирует быстрее чем ng-click,
+                               * поэтому без $timeout chooseItem не успеет поймать item до того, как лист исчезнет
+                               */
+                            $timeout(function () { $listContainer.removeClass('show') }, 200);
+                        });
+
+                        scope.chooseItem = function (item) {
+                            scope.search = item.name;
+                            switch(item.name){
+                                case 'мужской': scope.datafield = 'male'//scope.sex = 'mail'
+                                    break;
+                                case 'женский': scope.datafield ='female'//scope.sex = 'femail'
+                                    break;
+                                case 'Администратор': scope.datafield ='admin'//scope.status = 'admin'
+                                    break;
+                                case 'Преподователь': scope.datafield ='преподователь'//scope.status = 'преподователь'
+                                    break;
+                                case 'Сотрудник': scope.datafield ='user'//scope.status = 'user'
+                                    break;
+                                case 'Кандидат': scope.datafield ='guest'//scope.status = 'guest'
+                                    break;
+
+                            }
+                            $listContainer.removeClass('show');
+                        }
+                    }
+                }
+            }
+        );
 })();
+

@@ -23,6 +23,7 @@ var TestAScheme = new Schema(
 			type: Boolean,
 			default: false
 		},
+		tests:[],
 		options: [],
 		answers: []
 

@@ -14,7 +14,12 @@ function addAll(test) {
 
 console.log('Default testGen. Please, wait...');
 testService.removeCollectionDemo({}).then(function (data) {  
-    addAll(testD);
+    addAll(testD.questions);
+    testService.removeColectionTests({}).then(function(data){
+        testService.addTests(testD.tests);
+    }).catch(function(err){
+        console.log(err);
+    })
 }).catch(function (err) {
 	console.log(err);
 });

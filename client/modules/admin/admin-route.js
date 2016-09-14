@@ -24,6 +24,25 @@
                 templateUrl: 'modules/admin/reports/report.html',
                 controller: 'reportController',
                 role:['admin']
+            }).state('usersState',{
+                url: '/admin/usersState',
+                templateUrl: 'modules/admin/usersState/users.html',
+                controller: 'usersStateController',
+                role:['admin']
+            }).state('testForUsers',{
+                url: '/admin/assignTest',                
+                params: {
+                    list: { array: true }
+                },
+                templateUrl: 'modules/admin/assignTest/tests.html',
+                controller: 'assignTest',
+                role:['admin']
+            }).state('createNewTest',{
+                url: '/admin/createTest',
+                templateUrl: 'modules/admin/newTest/newTest.html',
+                controller: 'newTestcontroller',
+                role:['admin']
             })
-    }])
+
+    }]);
 }());

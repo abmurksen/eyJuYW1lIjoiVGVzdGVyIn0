@@ -33,11 +33,19 @@ var UserSchema = new Schema(
 			type: String,
 			default: '+375291111111'
 		},
+		birthDate: {
+			type:Number
+		},
+		sex: {
+			type: String,
+			enum:['male', 'female']
+		},
 		status: {
 			type: String,
 			enum: ['free','open','req','stack'],
 			default: 'free'
 		},
+		group: [{name:String}],
 		fullName: {
 			type:String
 		}

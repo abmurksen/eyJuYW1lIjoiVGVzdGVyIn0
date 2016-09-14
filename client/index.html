@@ -20,6 +20,9 @@
     <link type="text/css" rel="stylesheet" href="index.css">
     <link type="text/css" rel="stylesheet" href="modules/admin/assignStd/assignStd.css">
     <link type="text/css" rel="stylesheet" href="modules/admin/newUser/newUser.css">
+    <link type="text/css" rel="stylesheet" href="modules/admin/usersState/users.css">
+    <link type="text/css" rel="stylesheet" href="modules/admin/assignTest/assignTest.css">    
+    <script type="text/javascript" src="modules/admin/newTest/newTest.js"></script>
     <link type="text/css" rel="stylesheet" href="modules/statistic/statistic.css">
     <link type="text/css" rel="stylesheet" href="modules/home/user/user-home.css">
     <link type="text/css" rel="stylesheet" href="modules/admin/assignTch/assignTch.css">
@@ -48,9 +51,11 @@
 
     <footer ng-if="!isLoginPage()"><h3 class="pull-right"><em>© , 2016</em></h3></footer>
         <!-- build:js  lib.js-->
+        
         <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
         <script type="text/javascript" src="bower_components/d3.chart/d3.chart.min.js"></script>
         <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/angular-smart-table/dist/smart-table.js"></script>
         <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
         <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
@@ -63,13 +68,12 @@
         <script type="text/javascript" src="bower_components/angular-soundmanager2/dist/angular-soundmanager2.js"></script>
         <script type="text/javascript" src="bower_components/nya-bootstrap-select/dist/js/nya-bs-select.js"></script>
         <script type="text/javascript" src="bower_components/angularAudioRecorder/dist/angular-audio-recorder.js"></script>
-        <script type="text/javascript" src="bower_components/wavesurfer.js/dist/wavesurfer.min.js"></script>
+        <!--<script type="text/javascript" src="bower_components/wavesurfer.js/dist/wavesurfer.min.js"></script>-->
 
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="route.js"></script>
         <script type="text/javascript" src="app.controller.js"></script>
-        <script type="text/javascript" src="modules/admin/admin-controller.js"></script>
-        <script type="text/javascript" src="modules/admin/newUser/newUser-controller.js"></script>
+        <script type="text/javascript" src="modules/admin/admin-controller.js"></script>        
         <script type="text/javascript" src="common/header/header-controller.js"></script>
         <script type="text/javascript" src="common/login/login-controller.js"></script>
         <script type="text/javascript" src="modules/home/home-controller.js"></script>
@@ -77,8 +81,6 @@
         <script type="text/javascript" src="modules/home/admin/adminHome-service.js"></script>
         <script type="text/javascript" src="modules/home/admin/admin-home.controller.js"></script>
         <script type="text/javascript" src="modules/home/user/user-home.controller.js"></script>
-        <script type="text/javascript" src="modules/admin/assignStd/assignStd-controller.js"></script>
-        <script type="text/javascript" src="modules/admin/assignTch/assignTch-controller.js"></script>
         <script type="text/javascript" src="modules/tests/badQuestion/badQuestion-controller.js"></script>
         <script type="text/javascript" src="infrastructure/auth.service.js"></script>
         <script type="text/javascript" src="modules/tests/tests-controller.js"></script>
@@ -86,6 +88,24 @@
         <script type="text/javascript" src="modules/tests/addQuestion/upload.js"></script>
         <script type="text/javascript" src="infrastructure/news-statistics-service.js"></script>
         <script type="text/javascript" src="modules/admin/reports/report-controller.js"></script>
+        
+        
+        <script type="text/javascript" src="modules/admin/usersState/usersState-controller.js"></script>        
+        <script type="text/javascript" src="modules/admin/assignTest/assignTest.js"></script>
+        <script type="text/javascript" src="modules/admin/newUser/newUser-controller.js"></script>
+        
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="modules/admin/newTest/newTest.js"></script>
+        
+
+        <script type="text/javascript" src="modules/admin/assignStd/assignStd-controller.js"></script>
+        <script type="text/javascript" src="modules/admin/assignTch/assignTch-controller.js"></script>
+        
+        
+        
+
+        <!--<script type="text/javascript" src="modules/admin/usersState/safectrl.js"></script>-->
+        <!--<script type="text/javascript" src="modules/admin/usersState/usersState-derective.js"></script>-->
 
         <script type="text/javascript" src="modules/statistic/statistics-route.js"></script>
         <script type="text/javascript" src="modules/statistic/statistic-controller.js"></script>

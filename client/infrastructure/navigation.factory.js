@@ -6,43 +6,85 @@
 
             var adminNav = [
                 {
-                    name: 'Home',
-                    state: 'home'
-                },
-                {
-                    name: 'Администрирование',
-                    tabs: [
-                        {
-                            name: 'Назначение теста студентам',
-                            state: 'assignStd'
-                        },
-                        {
-                            name: 'Создать пользователя',
-                            state: 'newUser'
-                        },
-                        {
-                            name: 'Отчёты',
-                            state: 'reports'
-                        }
-                    ]
-                },
-                {
-                    name: 'Статистика',
-                    state: 'statistics'
+                    name: 'Пользователи',
+                    state: 'usersState'
                 },
                 {
                     name: 'Тесты',
                     tabs: [
                         {
-                            name: 'Добавить вопрос',
-                            state: 'addQuestion'
+                             name: 'Добавить тест',
+                             state: 'createNewTest'
                         },
                         {
-                            name: 'Плохие вопросы',
-                            state: 'badQuestions'
+                            name: 'Назначение теста студентам',
+                            state: 'assignStd'
                         }
                     ]
+                    // state: 'tests'
+                },
+                {
+                    // name: 'Отчёты',
+                    // // state: 'reports'
+                },
+                {
+                    name: 'Администрирование',
+                    // state: 'administration',
+                    tabs: [                   
+                        {
+                                name: 'Создать пользователя',
+                                state: 'newUser'
+                        }
+                        // {
+                        //     name: 'Профили',
+                        //     // state: 'newUser'
+                        // }
+                        // {
+                        //     name: 'Назначение теста студентам',
+                        //     state: 'assignStd'
+                        // }
+                    ]
                 }
+                // {
+                //     name: 'Home',
+                //     state: 'home'
+                // }
+                // {
+                //     name: 'Администрирование',
+                //     tabs: [
+                //         {
+                //             name: 'Назначение теста студентам',
+                //             state: 'assignStd'
+                //         },
+                //         {
+                //             name: 'Создать пользователя',
+                //             state: 'newUser'
+                //         },
+                //         {
+                //             name: 'Отчёты',
+                //             state: 'reports'
+                //         }
+                //     ]
+                // },
+                // {
+                //     name: 'Статистика',
+                //     state: 'statistics'
+                // },
+                // {
+                //     name: 'Тесты',
+                //     tabs: [
+                //         {
+                //             name: 'Добавить вопрос',
+                //             state: 'addQuestion'
+                //         },
+                //         {
+                //             name: 'Плохие вопросы',
+                //             state: 'badQuestions'
+                //         }
+                //     ]
+                // }
+
+
             ];
 
             var userNav = [

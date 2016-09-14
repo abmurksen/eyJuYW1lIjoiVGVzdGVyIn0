@@ -14,7 +14,7 @@
                     url: '/home',
                     templateUrl: 'modules/home/home.html',
                     controller: 'homeController',
-                    role: ['admin', 'user', 'teacher', 'guest']
+                    role: [ 'admin','user', 'teacher', 'guest']//
                 });
             $urlRouterProvider.otherwise('/home');
 

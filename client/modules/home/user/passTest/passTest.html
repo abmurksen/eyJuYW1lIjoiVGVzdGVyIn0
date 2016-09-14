@@ -15,8 +15,8 @@
 
 			<div class="div-fing">
 				<button class="btn-user btn-fing" ng-class="{'bnt-bad-que':userAnswers[currentPage - 1].badForUser,'btn-good-que': !userAnswers[currentPage - 1].badForUser}" id="btn-fing" ng-click="addBadForUser(currentPage - 1)"></button>
-				<label class="label-fing" for="btn-fing" ng-if="!userAnswers[currentPage - 1].badForUser">If you think <br> question with an error,<br> press the button</label>
-				<label class="label-fing" for="btn-fing" ng-if="userAnswers[currentPage - 1].badForUser">If you change mind<br> about question, <br>press the button</label>
+				<label class="label-fing" for="btn-fing" ng-if="!userAnswers[currentPage - 1].badForUser">Если вы считаете что <br> вопрос с ошибкой,<br> press the button</label>
+				<label class="label-fing" for="btn-fing" ng-if="userAnswers[currentPage - 1].badForUser">Если вы передумали<br> нажмите ещё раз</label>
 			</div>
 
 			<!--form name="num" class="form-num">
@@ -33,7 +33,7 @@
 				<span class="have-time" id="time">{{timerHours}} : {{timerMin}} : {{timerSec}}</span>
 			</label class="label-have-time">
 			<div >
-				<h3 class="label-missing" for="missing-que">You missing</h3>
+				<h3 class="label-missing" for="missing-que">Пропущенные</h3>
 				<span id="missing-que" ng-repeat="question in allQuestions track by $index"> 
 					<span ng-if="dirty[$index] && !validAnswers[$index]"><button ng-click="setNumPage($index + 1)" class="btn-missing">{{$index + 1}}</button></span>
 				</span>

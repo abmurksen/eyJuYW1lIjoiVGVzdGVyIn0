@@ -1,12 +1,14 @@
 [{
-    "firstName" : "Burnice",
-    "lastName" : "Shields",
+    "firstName" : "Пётр",
+    "lastName" : "Петров",
     "fullName" : "Burnice Shields admin1@mail.ru",
     "email" : "admin1@mail.ru",
     "password" : "a1",
     "status" : "free",
     "number" : "+375291111111",
-    "role" : "admin"
+    "role" : "admin",
+    "birthDate": 1301943123641,
+    "sex": "male"
 },
 {
     "firstName" : "Иван",
@@ -16,7 +18,9 @@
     "password" : "i",
     "status" : "free",
     "number" : "+375291111112",
-    "role" : "admin"
+    "role" : "admin",    
+    "birthDate": 1301943123641,
+    "sex": "male"
 },
 {
     "firstName" : "Людмила",
@@ -26,7 +30,9 @@
     "password" : "v",
     "status" : "free",
     "number" : "+375291111113",
-    "role" : "user"
+    "role" : "user",
+    "birthDate": 1301943123641,
+    "sex": "female"
 },
 {
     "firstName" : "Антонина",
@@ -36,7 +42,9 @@
     "password" : "g",
     "status" : "free",
     "number" : "+375291111114",
-    "role" : "teacher"
+    "role" : "teacher",
+    "birthDate": 1301943123641,
+    "sex": "female"
 },
 {
     "firstName" : "Михаил",
@@ -46,7 +54,9 @@
     "password" : "k",
     "status" : "free",
     "number" : "+375291111115",
-    "role" : "guest"
+    "role" : "guest",
+    "birthDate": 1301943123641,
+    "sex": "male"
 },
 {
     "firstName" : "Вячеслав",
@@ -56,5 +66,7 @@
     "password" : "p",
     "status" : "free",
     "number" : "+375291111116",
-    "role" : "user"
+    "role" : "user",
+    "birthDate": 1301943123641,
+    "sex": "male"
 }]

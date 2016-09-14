@@ -89,6 +89,16 @@
                     },
 
 
+                    getTestsArray: function (word){
+                        return  httpService.post(host + '/admin/getTestsList',{name: word})
+                            .then(
+                                function (result) {
+                                    return result.data;
+                                }
+                            )
+                    },
+
+
                     newUser: function (firstName_, secondName_, email_, number_, _dateStart,_dateEnd) {
                         return httpService.post(host + '/admin/register', {password: 11111, email: email_,
                                 firstName: firstName_, secondName: secondName_, phone: number_, dateStart: _dateStart, dateEnd: _dateEnd})
@@ -103,6 +113,19 @@
                             );
                     },
 
+                     createUser: function (user){//firstName_, secondName_, email_, number_, sex_, bDate_, status_, group_) {
+                        return httpService.post(host + '/admin/newUser',user) //{password: 11111, email: email_,
+                                //firstName: firstName_, secondName: secondName_, phone: number_, sex: sex_, bDate : bdate, status: status_, group: group_ })
+                            .then(function(result){
+                                    console.log('new user created');
+                                    return true;
+                                },
+                                function () {
+                                    console.log('create new user failed');
+                                    return false;
+                                }
+                            );
+                    },
                     getTest: function () {
                         return httpService.get(host + '/user/getTest')
                             .then(
@@ -243,7 +266,12 @@
                     },
                     sendGoodQuestions: function(data) {
                         return httpService.post(host + '/admin/disblockComplainedDemo', data);
+                    },
+
+                    assignNewTest: function(data) {
+                        return httpService.post(host + '/admin/assignNewTest', data);
                     }
+                    
 
 
 
